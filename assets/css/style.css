@@ -14,3 +14,13 @@
 #cards {
     border: solid 1px purple;
 }
+
+#map {
+    border: solid 1px orange;
+}
+
+.map-img {
+    background-color: green;
+    width: 500px;
+    height: 500px;
+}
