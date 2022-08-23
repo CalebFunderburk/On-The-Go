@@ -21,7 +21,7 @@ In this project...
 
 ## Contributions
 
-David Townsend
-Allison Venning
-Kenan Mckenzie
-Caleb Funderburk
+- David Townsend
+- Allison Venning
+- Kenan Mckenzie
+- Caleb Funderburk
