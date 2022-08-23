@@ -1,0 +1,13 @@
+#header {
+    border: solid 1px black;
+    margin: 10px, 0px;
+}
+
+#search {
+    border: solid 1px blue;
+}
+
+#daily-weather {
+    border: solid 1px green;
+}
+

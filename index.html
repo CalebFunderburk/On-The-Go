@@ -4,13 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Add Bulma framework link here -->
-    <link rel="stylesheet" href="#">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/index.js" defer></script>
     <title>Weather Knower</title>
 </head>
 <body>
+
+    <!-- Header -->
+    <div id="header" class="has-text-centered">
+        <h1>Weather Knower</h1>
+    </div>
+
+    <!-- Search -->
+    <div id="search">
+        <div class="has-text-left">
+            <h2>Search for a city:</h2>
+            <input type="text">
+            <button type="button" >Submit</button>
+        </div>
+    </div>
+
+    <!-- Weather Stats -->
+    <div id="daily-weather" class="hero">
+        <div class="city-name">Atlanta</div>
+        <div class="date">03/04/2022</div>
+        <div class="temp">Temp:74.01*F</div>
+        <div class="wind" >Wind: 6.67MPH</div>
+        <div class="humid" >Humidity: 46%</div>
+    </div>
+
+    <!-- Card Section-->
+    <div id="cards" class="">
+
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="date card-header-title has-text-centered">03/05/2022</div>
+            <div class="pic card-header-icon">*Rain*</div>
+            <div class="temp card-content">Temp: 73.73*F</div>
+            <div class="wind card-content">Wind: 9.53 MPH</div>
+            <div class="humid card-content">Humidity: 66%</div>
+        </div>
+
+    </div>
     
 </body>
 </html>
