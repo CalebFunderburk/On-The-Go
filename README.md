@@ -8,10 +8,12 @@ https://calebfunderburk.github.io/Weather-Knower/
 
 - HTML
 - CSS
-    - Bulma
+- Bulma
 - JavaScript
+- JQuery
 - Open Weather Api
 - Traffic View API
+- MomentJS
 
 # Project Narrative
 
