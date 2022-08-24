@@ -24,3 +24,7 @@
     width: 500px;
     height: 500px;
 }
+
+footer {
+    border: solid 1px red;
+}
