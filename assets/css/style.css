@@ -1,14 +1,17 @@
 #header {
     border: solid 1px black;
     margin: 10px, 0px;
+    background-image: linear-gradient(lightblue,pink );
 }
 
 #search {
     border: solid 1px blue;
+
 }
 
 .current-weather {
     border: solid 1px green;
+    
 }
 
 #cards {
@@ -26,4 +29,7 @@
 
 footer {
     border: solid 1px red;
+} 
+body{
+    
 }
