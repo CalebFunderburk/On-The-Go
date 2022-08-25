@@ -1,14 +1,17 @@
 #header {
     border: solid 1px black;
     margin: 10px, 0px;
+    background-image: linear-gradient(lightblue,pink );
 }
 
 #search {
     border: solid 1px blue;
+
 }
 
-#daily-weather {
+.current-weather {
     border: solid 1px green;
+    
 }
 
 #cards {
@@ -19,8 +22,14 @@
     border: solid 1px orange;
 }
 
-.map-img {
-    background-color: green;
+.holi {
     width: 500px;
     height: 500px;
+}
+
+footer {
+    border: solid 1px red;
+} 
+body{
+    
 }
