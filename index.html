@@ -18,16 +18,19 @@
     </header>
 
     <!-- Search -->
-    <div id="search" class="has-text-left m-5 p-2">
-        <h2 class="is-size-4">Get the local weather for the next 5 days and check to see what traffic is looking like!</h2>
-        <form id="user-form" class="my-2">
-            <input id="city-search" class="input-value form-input is-size-6" name="city" type="text" autofocus="true" placeholder="Enter a City name"/>
-            <button type="sumbit" class="btn is-size-6">Search</button>
+    <nav id="search" class="has-text-left m-5 p-2">
+        <h2 class="is-size-4 has-text-centered">Get the local weather for the next 5 days and check to see what traffic is looking like!</h2>
+        <form id="user-form" class="has-text-centered my-2">
+            <input id="latitude" class="lat-value is-size-6" type="text" inputmode="numeric" placeholder="Latitude" value="42.98"/>
+            <input id="longitude" class="lon-value is-size-6" type="text" inputmode="numeric" placeholder="Longitude" value="-81.23"/>
+            <button id="btn-get" class="is-size-6" type="button">Use Current Location</button>
+            <br/>
+            <button id="btn-current" class="is-size-4 mt-4" type="button">Get Weather</button>
         </form>
-    </div>
+    </nav>
 
-    <!-- Weather Stats -->
-    <div id="daily-weather" class="hero has-text-left m-5 p-2">
+    <!-- Current Weather Stats -->
+    <div class="current-weather hero has-text-left m-5 p-2">
         <div class="city-name is-size-4 has-text-weight-bold">Atlanta</div>
         <div class="date is-size-5 mb-3">03/04/2022</div>
         <div class="temp is-size-5">Temp:74.01*F</div>
@@ -85,10 +88,10 @@
         </div>
     </div>
 
-    <h4 class="has-text-centered has-text-weight-bold is-size-3 m-5">Avoid these traffic jams on the road!</h4>
-    <!-- Map -->
-    <div id="map" class="hero m-5 p-2">
-        <div class="map-img container">
+    <h4 class="has-text-centered has-text-weight-bold is-size-3 m-5">What's going on in the world today?</h4>
+    <!-- Holiday -->
+    <div id="holidays" class="hero m-5 p-2">
+        <div class="holi container">
 
         </div>
     </div>
