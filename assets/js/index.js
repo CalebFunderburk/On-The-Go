@@ -1,4 +1,4 @@
-// // Global Selectors
+// Global Selectors
 let btn = document.querySelector(".btn");
 let inputValue = document.querySelector(".input-value");
 let cityName = document.querySelector(".city-name");
@@ -7,6 +7,77 @@ let pic = document.querySelector(".pic");
 let temp = document.querySelector(".temp");
 let wind = document.querySelector(".wind");
 let humid = document.querySelector(".humid");
+// icon = [
+//     {day:"", night:"", description:""},
+//     {day:"", night:"", description:""},
+//     {day:"", night:"", description:""},
+//     {day:"", night:"", description:""},
+//     {day:"", night:"", description:""},
+//     {day:"", night:"", description:""},
+//     {day:"", night:"", description:""},
+//     {day:"", night:"", description:""},
+//     {day:"", night:"", description:""}
+// ];
+// descriptions.forEach(function(description)) {
+
+// }
+
+// var iconArray = new Array();
+// iconArray[0] = new Icon();
+// iconArray[0].src="./assets/images/01d.png";
+
+// iconArray[1] = new Icon();
+// iconArray[1].src="./assets/images/01n.png";
+
+// iconArray[2] = new Icon();
+// iconArray[2].src="./assets/images/02d.png";
+
+// iconArray[3] = new Icon();
+// iconArray[3].src="./assets/images/02n.png";
+
+// iconArray[4] = new Icon();
+// iconArray[4].src="./assets/images/03d.png";
+
+// iconArray[5] = new Icon();
+// iconArray[5].src="./assets/images/03n.png";
+
+// iconArray[6] = new Icon();
+// iconArray[6].src="./assets/images/04d.png";
+
+// iconArray[7] = new Icon();
+// iconArray[7].src="./assets/images/04n.png";
+
+// iconArray[8] = new Icon();
+// iconArray[8].src="./assets/images/09d.png";
+
+// iconArray[9] = new Icon();
+// iconArray[9].src="./assets/images/09n.png";
+
+// iconArray[10] = new Icon();
+// iconArray[10].src="./assets/images/10d.png";
+
+// iconArray[11] = new Icon();
+// iconArray[11].src="./assets/images/10n.png";
+
+// iconArray[12] = new Icon();
+// iconArray[12].src="./assets/images/11d.png";
+
+// iconArray[13] = new Icon();
+// iconArray[13].src="./assets/images/11n.png";
+
+// iconArray[14] = new Icon();
+// iconArray[14].src="./assets/images/13d.png";
+
+// iconArray[15] = new Icon();
+// iconArray[15].src="./assets/images/13n.png";
+
+// iconArray[16] = new Icon();
+// iconArray[16].src="./assets/images/50d.png";
+
+// iconArray[17] = new Icon();
+// iconArray[17].src="./assets/images/50n.png";
+
+
 
 // Display current date and time
 const currentTime = moment();
@@ -78,7 +149,7 @@ const app = {
     showWeather: (response) => {
         console.log(response);
 
-// ****DAY1
+
         // Variable for DOM
         let currentCity = document.getElementById("current-city");
         let currentIcon = document.getElementById("current-icon");
@@ -88,7 +159,7 @@ const app = {
         let currentSpeed = document.getElementById("current-speed");
         //let tempF = document.getElementById("tempF")
         //let tempF = document.getElementById("tempF");
-        let Kelvin = response.list[0].main.temp-273.15;
+        var Kelvin = response.list[0].main.temp-273.15;
         
         
         
@@ -96,7 +167,7 @@ const app = {
         currentCity.innerHTML = response.city.name;
         currentIcon.innerHTML = response.list[0].weather[0].icon;
         currentDesc.innerHTML = response.list[0].weather[0].description;
-        currentTemp.innerHTML = "Temp:" + ((Kelvin*1.8)+32).toFixed(2) + "F";
+        currentTemp.innerHTML = "Temp:" + ((Kelvin*1.8)+32) + "F";
         currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
         currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
      
@@ -130,6 +201,64 @@ const app = {
         let iconDay2 = document.getElementById("icon-day2");
         let descDay2 = document.getElementById("desc-day2");
         let tempDay2 = document.getElementById("temp-day2");
+        // var iconCode = currentIcon.innerHTML;
+
+        
+        // function iconUrl () {
+        //     if (iconCode === '01d') {
+        //         iconDay2.source.appendChild('./images/01d.png')
+        //     };
+        //     elseif (iconCode === '01n'); {
+        //         iconDay2.source.appendChild('./images/01n.png')
+        //     };
+        //     elseif (iconCode === '02d'); {
+        //         iconDay2.source.appendChild('./images/02d.png')
+        //     };
+        //     elseif (iconCode === '02n'); {
+        //         iconDay2.source.appendChild('./images/02n.png')
+        //     };
+        //     elseif (iconCode === '03d'); {
+        //         iconDay2.source.appendChild('./images/03d.png')
+        //     };
+        //     elseif (iconCode === '03n'); {
+        //         iconDay2.source.appendChild('./images/03n.png')
+        //     };
+        //     elseif (iconCode === '04d'); {
+        //         iconDay2.source.appendChild('./images/04d.png')
+        //     };
+        //     elseif (iconCode === '04n'); {
+        //         iconDay2.source.appendChild('./images/04n.png')
+        //     };
+        //     elseif (iconCode === '09d'); {
+        //         iconDay2.source.appendChild('./images/09d.png')
+        //     };
+        //     elseif (iconCode === '09n'); {
+        //         iconDay2.source.appendChild('./images/09n.png')
+        //     };
+        //     elseif (iconCode === '10d'); {
+        //         iconDay2.source.appendChild('./images/10d.png')
+        //     };
+        //     elseif (iconCode === '10n'); {
+        //         iconDay2.source.appendChild('./images/10n.png')
+        //     };
+        //     elseif (iconCode === '13d'); {
+        //         iconDay2.source.appendChild('./images/13d.png')
+        //     };
+        //     elseif (iconCode === '13n'); {
+        //         iconDay2.source.appendChild('./images/13n.png')
+        //     };
+        //     elseif (iconCode === '50d'); {
+        //         iconDay2.source.appendChild('./images/50d.png')
+        //     };
+        //     elseif (iconCode === '50n'); {
+        //         iconDay2.source.appendChild('./images/50n.png')
+        //     };
+        // };
+        // iconUrl();
+
+        
+
+        //$('#icon-day2').attr('src', iconUrl)
 
         dateDay2.innerHTML = response.list[11].dt_txt.replace("12:00:00", "");
         iconDay2.innerHTML = response.list[11].weather[0].icon;
@@ -273,6 +402,7 @@ fetch('https://date.nager.at/api/v3/NextPublicHolidaysWorldwide?per_page=5')
     });
 
 app.init();
+
 
 // let newTemp = currentTemp(this.value[i]);
 

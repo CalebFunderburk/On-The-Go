@@ -12,7 +12,7 @@
 <body>
 
     <!-- Header -->
-    <header id="header" class="has-text-centered p-3">
+    <header id="header" class="box has-background-info has-text-centered p-3 has-text-info-light">
         <h1 class="is-size-2">On The Go</h1>
         <p id="currentDay" class="time-display is-size-4"></p>
     </header>
@@ -33,9 +33,11 @@
     <div class="hero has-text-left m-5 p-2">
         <div id="current-city">
         </div>
-        <div id="current-icon">
+        <div id="current-icon" class="icon">
+            <!--icon test-->
+            <div id="icon"><img id="wicon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="light rain"></div>
         </div>
-        <div id="current-desc">
+        <div id="current-desc" class="description">
         </div>
         <div id="current-temp">
         </div>
@@ -54,9 +56,10 @@
         <div id="update-1" class="column">
             <div id="date-day1">
             </div>
-            <div id="icon-day1">
+            <div class="icon">
+                <img id="icon-day1" src="">
             </div>
-            <div id="desc-day1">
+            <div id="desc-day1" class="description">
             </div>
             <div id="temp-day1">
             </div>    
@@ -66,9 +69,10 @@
         <div id="update-2" class="column">
             <div id="date-day2">
             </div>
-            <div id="icon-day2">
+            <div class="icon">
+                <img id="icon-day2" src="">
             </div>
-            <div id="desc-day2">
+            <div id="desc-day2" class="description">
             </div>
             <div id="temp-day2">
             </div>    
@@ -78,9 +82,10 @@
         <div id="update-3" class="column">
             <div id="date-day3">
             </div>
-            <div id="icon-day3">
+            <div class="icon">
+                <img id="icon-day3" src="">
             </div>
-            <div id="desc-day3">
+            <div id="desc-day3" class="description">
             </div>
             <div id="temp-day3">
             </div>    
@@ -90,9 +95,10 @@
         <div id="update-4" class="column">
             <div id="date-day4">
             </div>
-            <div id="icon-day4">
+            <div  class="icon">
+                <img id="icon-day4" src="">
             </div>
-            <div id="desc-day4">
+            <div id="desc-day4" class="description">
             </div>
             <div id="temp-day4">
             </div>    
@@ -102,9 +108,9 @@
         <div id="update-5" class="column">
             <div id="date-day5">
             </div>
-            <div id="icon-day5">
+            <div id="icon-day5" class="icon">
             </div>
-            <div id="desc-day5">
+            <div id="desc-day5" class="description">
             </div>
             <div id="temp-day5">
             </div>    
@@ -113,19 +119,22 @@
     </container>
 
     <!-- Holiday -->
-    <h4 class="has-text-centered has-text-weight-bold is-size-3 m-5">What's going on in the world?</h4>
-    <div class="columns has-text-centered">
-        <div id="holi1" class="card column m-5 p-2">
+        <div class="card-header has-background-info">
+            <div class="card-header-title has-text-centered has-text-weight-bold is-size-3 m-5 has-text-info-light">What's going on in the world?</div>
         </div>
-        <div id="holi2" class="card column m-5 p-2">
-        </div>
-        <div id="holi3" class="card column m-5 p-2">
-        </div>
-        <div id="holi4" class="card column m-5 p-2">
-        </div>
-        <div id="holi5" class="card column m-5 p-2">
-        </div>
-    </div>
+            <div class="columns has-text-centered">
+                <div id="holi1" class="card column m-5 p-2">
+                </div>
+                <div id="holi2" class="card column m-5 p-2">
+                </div>
+                <div id="holi3" class="card column m-5 p-2">
+                </div>
+                <div id="holi4" class="card column m-5 p-2">
+                </div>
+                <div id="holi5" class="card column m-5 p-2">
+                </div>
+        
+    
 
     <!-- Footer -->
     <footer class="has-text-centered p-3">
