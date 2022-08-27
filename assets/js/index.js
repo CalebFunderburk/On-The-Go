@@ -1,12 +1,12 @@
 // // Global Selectors
-// let btn = document.querySelector(".btn");
-// let inputValue = document.querySelector(".input-value");
-// let cityName = document.querySelector(".city-name");
-// let date = document.querySelector(".date");
-// let pic = document.querySelector(".pic");
-// let temp = document.querySelector(".temp");
-// let wind = document.querySelector(".wind");
-// let humid = document.querySelector(".humid");
+let btn = document.querySelector(".btn");
+let inputValue = document.querySelector(".input-value");
+let cityName = document.querySelector(".city-name");
+let date = document.querySelector(".date");
+let pic = document.querySelector(".pic");
+let temp = document.querySelector(".temp");
+let wind = document.querySelector(".wind");
+let humid = document.querySelector(".humid");
 
 // Display current date and time
 const currentTime = moment();
@@ -78,6 +78,7 @@ const app = {
     showWeather: (response) => {
         console.log(response);
 
+// ****DAY1
         // Variable for DOM
         let currentCity = document.getElementById("current-city");
         let currentIcon = document.getElementById("current-icon");
@@ -100,10 +101,91 @@ const app = {
         let descDay1 = document.getElementById("desc-day1");
         let tempDay1 = document.getElementById("temp-day1");
 
-        dateDay1.innerHTML = response.list[4].dt_txt.replace("12:00:00", "");
-        iconDay1.innerHTML = response.list[4].weather[0].icon;
-        descDay1.innerHTML = response.list[4].weather[0].description;
-        tempDay1.innerHTML= "Temp: " + response.list[4].main.temp;
+        dateDay1.innerHTML = response.list[3].dt_txt.replace("12:00:00", "");
+        iconDay1.innerHTML = response.list[3].weather[0].icon;
+        descDay1.innerHTML = response.list[3].weather[0].description;
+        tempDay1.innerHTML= "Temp: " + response.list[3].main.temp;
+
+//****DAY2 
+        // // Display current weather data onto the page
+
+        currentCity.innerHTML = response.city.name;
+        currentIcon.innerHTML = response.list[0].weather[0].icon;
+        currentDesc.innerHTML = response.list[0].weather[0].description;
+        currentTemp.innerHTML = "Temp: " + response.list[0].main.temp + " K";
+        currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
+        currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
+
+        // // Display day 2 weather data to page
+        let dateDay2 = document.getElementById("date-day2");
+        let iconDay2 = document.getElementById("icon-day2");
+        let descDay2 = document.getElementById("desc-day2");
+        let tempDay2 = document.getElementById("temp-day2");
+
+        dateDay2.innerHTML = response.list[11].dt_txt.replace("12:00:00", "");
+        iconDay2.innerHTML = response.list[11].weather[0].icon;
+        descDay2.innerHTML = response.list[11].weather[0].description;
+        tempDay2.innerHTML= "Temp: " + response.list[11].main.temp; 
+        
+//****DAY3 
+        // // Display current weather data onto the page
+        currentCity.innerHTML = response.city.name;
+        currentIcon.innerHTML = response.list[0].weather[0].icon;
+        currentDesc.innerHTML = response.list[0].weather[0].description;
+        currentTemp.innerHTML = "Temp: " + response.list[0].main.temp + " K";
+        currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
+        currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
+
+        // // Display day 3 weather data to page
+        let dateDay3 = document.getElementById("date-day3");
+        let iconDay3 = document.getElementById("icon-day3");
+        let descDay3 = document.getElementById("desc-day3");
+        let tempDay3 = document.getElementById("temp-day3");
+
+        dateDay3.innerHTML = response.list[19].dt_txt.replace("12:00:00", "");
+        iconDay3.innerHTML = response.list[19].weather[0].icon;
+        descDay3.innerHTML = response.list[19].weather[0].description;
+        tempDay3.innerHTML= "Temp: " + response.list[19].main.temp;
+        
+ //****DAY4 
+        // // Display current weather data onto the page
+        currentCity.innerHTML = response.city.name;
+        currentIcon.innerHTML = response.list[0].weather[0].icon;
+        currentDesc.innerHTML = response.list[0].weather[0].description;
+        currentTemp.innerHTML = "Temp: " + response.list[0].main.temp + " K";
+        currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
+        currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
+
+        // // Display day 2 weather data to page
+        let dateDay4 = document.getElementById("date-day4");
+        let iconDay4 = document.getElementById("icon-day4");
+        let descDay4 = document.getElementById("desc-day4");
+        let tempDay4 = document.getElementById("temp-day4");
+
+        dateDay4.innerHTML = response.list[27].dt_txt.replace("12:00:00", "");
+        iconDay4.innerHTML = response.list[27].weather[0].icon;
+        descDay4.innerHTML = response.list[27].weather[0].description;
+        tempDay4.innerHTML= "Temp: " + response.list[26].main.temp;   
+        
+ //****DAY5 
+        // // Display current weather data onto the page
+        currentCity.innerHTML = response.city.name;
+        currentIcon.innerHTML = response.list[0].weather[0].icon;
+        currentDesc.innerHTML = response.list[0].weather[0].description;
+        currentTemp.innerHTML = "Temp: " + response.list[0].main.temp + " K";
+        currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
+        currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
+
+        // // Display day 5 weather data to page
+        let dateDay5 = document.getElementById("date-day5");
+        let iconDay5 = document.getElementById("icon-day5");
+        let descDay5 = document.getElementById("desc-day5");
+        let tempDay5 = document.getElementById("temp-day5");
+
+        dateDay5.innerHTML = response.list[35].dt_txt.replace("12:00:00", "");
+        iconDay5.innerHTML = response.list[35].weather[0].icon;
+        descDay5.innerHTML = response.list[35].weather[0].description;
+        tempDay5.innerHTML= "Temp: " + response.list[35].main.temp;             
     }
 }
 

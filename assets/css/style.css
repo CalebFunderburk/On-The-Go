@@ -13,7 +13,11 @@
 }
 
 #cards {
-    border: solid 1px purple;
+    border: solid 1px purple; margin: 20px; padding: 20px;
+}
+
+#card-column {
+    padding:20px;
 }
 
 #map {
@@ -23,4 +27,5 @@
 footer {
     border: solid 1px red;
 } 
+
 
