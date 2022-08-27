@@ -14,6 +14,8 @@ $("p.time-display").html(currentTime.format("[Today's date is: ] dddd MMMM Do, Y
 
 // Weather API function
 const app = {
+
+    // Event listeners for buttons
     init: () => {
       document
         .getElementById("btn-current")
@@ -22,7 +24,9 @@ const app = {
         .getElementById("btn-get")
         .addEventListener("click", app.getLocation);
     },
-    fetchWeather: (ev) => {
+
+    // API Fetch
+    fetchWeather: () => {
         // Open Weather Map API Variables
         let lat = document.getElementById("latitude").value;
         let lon = document.getElementById("longitude").value;
@@ -45,7 +49,9 @@ const app = {
             })
             .catch(console.err);
     },
-    getLocation: (ev) => {
+
+    // Get the users current location
+    getLocation: () => {
         // Default options
         let opts = {
             enableHighAccuracy: true,
@@ -54,32 +60,121 @@ const app = {
         };
         navigator.geolocation.getCurrentPosition(app.success, app.failure, opts);
     },
+
+    // Geolocation success
     success: (position) => {
-        // Geolocation success
         document.getElementById("latitude").value = 
             position.coords.latitude.toFixed(2);
         document.getElementById("longitude").value =
             position.coords.longitude.toFixed(2);
     },
+
+    // Geolocation failed
     failure: (err) => {
-        // Geolocation failed
         console.error(err);
     },
+
+    // Display weather stats
     showWeather: (response) => {
         console.log(response);
-        //let row = document.querySelector("current-weather");
+
+        // Variable for DOM
+        let currentCity = document.getElementById("current-city");
+        let currentIcon = document.getElementById("current-icon");
+        let currentDesc = document.getElementById("current-desc");
+        let currentTemp = document.getElementById("current-temp");
+        let currentHumid = document.getElementById("current-humid");
+        let currentSpeed = document.getElementById("current-speed");
+
+        // Display current weather data onto the page
+        currentCity.innerHTML = response.city.name;
+        currentIcon.innerHTML = response.list[0].weather[0].icon;
+        currentDesc.innerHTML = response.list[0].weather[0].description;
+        currentTemp.innerHTML = "Temp: " + response.list[0].main.temp + " K";
+        currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
+        currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
+
+        // Display day 1 weather data to page
+        let dateDay1 = document.getElementById("date-day1");
+        let iconDay1 = document.getElementById("icon-day1");
+        let descDay1 = document.getElementById("desc-day1");
+        let tempDay1 = document.getElementById("temp-day1");
+
+        dateDay1.innerHTML = response.list[4].dt_txt.replace("12:00:00", "");
+        iconDay1.innerHTML = response.list[4].weather[0].icon;
+        descDay1.innerHTML = response.list[4].weather[0].description;
+        tempDay1.innerHTML= "Temp: " + response.list[4].main.temp;
     }
 }
 
 // Holiday API fetch request
-fetch('https://date.nager.at/api/v3/publicholidays/2017/AT')
-    .then(function (res) {
-        return res.json();
+fetch('https://date.nager.at/api/v3/NextPublicHolidaysWorldwide?per_page=5')
+    .then(function (response) {
+        return response.json();
     })
     .then(function (data) {
         console.log(data);
+
+        // Empty variables to hold holiday info
+        let data1 = "";
+        let data2 = "";
+        let data3 = "";
+        let data4 = "";
+        let data5 = "";
+
+        // Display info for next 5 holidays
+        data.map(() => {
+            data1 = `<div class="card column">
+                        <p>${data[0].date}</p>
+                        <p>${data[0].localName}</p>
+                        <p>${data[0].name}</p>
+                        <p>${data[0].countryCode}</p>
+                     </div>`
+        });
+        document.getElementById("holi1").innerHTML = data1;
+
+        data.map(() => {
+            data2 = `<div class="card column">
+                        <p>${data[1].date}</p>
+                        <p>${data[1].localName}</p>
+                        <p>${data[1].name}</p>
+                        <p>${data[1].countryCode}</p>
+                    </div>`
+        });
+        document.getElementById("holi2").innerHTML = data2;
+
+        data.map(() => {
+            data3 = `<div class="card column">
+                        <p>${data[2].date}</p>
+                        <p>${data[2].localName}</p>
+                        <p>${data[2].name}</p>
+                        <p>${data[2].countryCode}</p>
+                    </div>`
+        });
+        document.getElementById("holi3").innerHTML = data3;
+
+        data.map(() => {
+            data4 = `<div class="card column">
+                        <p>${data[3].date}</p>
+                        <p>${data[3].localName}</p>
+                        <p>${data[3].name}</p>
+                        <p>${data[3].countryCode}</p>
+                    </div>`
+        });
+        document.getElementById("holi4").innerHTML = data4;
+
+        data.map(() => {
+            data5 = `<div class="card column">
+                        <p>${data[4].date}</p>
+                        <p>${data[4].localName}</p>
+                        <p>${data[4].name}</p>
+                        <p>${data[4].countryCode}</p>
+                    </div>`
+        });
+        document.getElementById("holi5").innerHTML = data5;
+    })
+    .catch((err) => {
+        console.log(err);
     });
-
-
 
 app.init();

@@ -7,21 +7,12 @@
     border: solid 1px blue;
 }
 
-.current-weather {
-    border: solid 1px green;
-}
-
 #cards {
     border: solid 1px purple;
 }
 
 #map {
     border: solid 1px orange;
-}
-
-.holi {
-    width: 500px;
-    height: 500px;
 }
 
 footer {
