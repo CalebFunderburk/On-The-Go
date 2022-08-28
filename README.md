@@ -12,7 +12,7 @@ https://calebfunderburk.github.io/Weather-Knower/
 - JavaScript
 - JQuery
 - Open Weather Api
-- Traffic View API
+- Nager.Date API
 - MomentJS
 
 # Project Narrative
