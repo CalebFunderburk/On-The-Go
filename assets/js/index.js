@@ -7,77 +7,6 @@ let pic = document.querySelector(".pic");
 let temp = document.querySelector(".temp");
 let wind = document.querySelector(".wind");
 let humid = document.querySelector(".humid");
-// icon = [
-//     {day:"", night:"", description:""},
-//     {day:"", night:"", description:""},
-//     {day:"", night:"", description:""},
-//     {day:"", night:"", description:""},
-//     {day:"", night:"", description:""},
-//     {day:"", night:"", description:""},
-//     {day:"", night:"", description:""},
-//     {day:"", night:"", description:""},
-//     {day:"", night:"", description:""}
-// ];
-// descriptions.forEach(function(description)) {
-
-// }
-
-// var iconArray = new Array();
-// iconArray[0] = new Icon();
-// iconArray[0].src="./assets/images/01d.png";
-
-// iconArray[1] = new Icon();
-// iconArray[1].src="./assets/images/01n.png";
-
-// iconArray[2] = new Icon();
-// iconArray[2].src="./assets/images/02d.png";
-
-// iconArray[3] = new Icon();
-// iconArray[3].src="./assets/images/02n.png";
-
-// iconArray[4] = new Icon();
-// iconArray[4].src="./assets/images/03d.png";
-
-// iconArray[5] = new Icon();
-// iconArray[5].src="./assets/images/03n.png";
-
-// iconArray[6] = new Icon();
-// iconArray[6].src="./assets/images/04d.png";
-
-// iconArray[7] = new Icon();
-// iconArray[7].src="./assets/images/04n.png";
-
-// iconArray[8] = new Icon();
-// iconArray[8].src="./assets/images/09d.png";
-
-// iconArray[9] = new Icon();
-// iconArray[9].src="./assets/images/09n.png";
-
-// iconArray[10] = new Icon();
-// iconArray[10].src="./assets/images/10d.png";
-
-// iconArray[11] = new Icon();
-// iconArray[11].src="./assets/images/10n.png";
-
-// iconArray[12] = new Icon();
-// iconArray[12].src="./assets/images/11d.png";
-
-// iconArray[13] = new Icon();
-// iconArray[13].src="./assets/images/11n.png";
-
-// iconArray[14] = new Icon();
-// iconArray[14].src="./assets/images/13d.png";
-
-// iconArray[15] = new Icon();
-// iconArray[15].src="./assets/images/13n.png";
-
-// iconArray[16] = new Icon();
-// iconArray[16].src="./assets/images/50d.png";
-
-// iconArray[17] = new Icon();
-// iconArray[17].src="./assets/images/50n.png";
-
-
 
 // Display current date and time
 const currentTime = moment();
@@ -162,119 +91,83 @@ const app = {
         var Kelvin = response.list[0].main.temp-273.15;
         
         
-        
+        const map = new Map();
+
+        map.set('01d', './assets/images/01d.png')
+        map.set('01n', './assets/images/01n.png')
+        map.set('02d', './assets/images/02d.png')
+        map.set('02n', './assets/images/02n.png')
+        map.set('03d', './assets/images/03d.png')
+        map.set('03n', './assets/images/03n.png')
+        map.set('04d', './assets/images/04d.png')
+        map.set('04n', './assets/images/04n.png')
+        map.set('09d', './assets/images/09d.png')
+        map.set('09n', './assets/images/09n.png')
+        map.set('10d', './assets/images/10d.png')
+        map.set('10n', './assets/images/10n.png')
+        map.set('11d', './assets/images/11d.png')
+        map.set('11n', './assets/images/11n.png')
+        map.set('13d', './assets/images/13d.png')
+        map.set('13n', './assets/images/13n.png')
+        map.set('50d', './assets/images/50d.png')
+        map.set('50n', './assets/images/50n.png');
+
         // Display current weather data onto the page
         currentCity.innerHTML = response.city.name;
-        currentIcon.innerHTML = response.list[0].weather[0].icon;
+        currentIcon.innerHTML = "<img src ='"+map.get(response.list[0].weather[0].icon)+"'/>";
         currentDesc.innerHTML = response.list[0].weather[0].description;
-        currentTemp.innerHTML = "Temp:" + ((Kelvin*1.8)+32) + "F";
+        currentTemp.innerHTML = "Temp:" + ((Kelvin*1.8)+32).toFixed(2) + "F";
         currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
         currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
      
-        
-        
-
-        // Display day 1 weather data to page
+          // Display day 1 weather data to page
         let dateDay1 = document.getElementById("date-day1");
-      
+        let iconDay1 = document.getElementById("icon-day1");
         let descDay1 = document.getElementById("desc-day1");
         let tempDay1 = document.getElementById("temp-day1");
-        let Kelvin1 = response.list[3].main.temp-273.15;
 
         dateDay1.innerHTML = response.list[3].dt_txt.replace("12:00:00", "");
-        //iconDay1.innerHTML = response.list[3].weather[0].icon;
+        iconDay1.innerHTML = response.list[3].weather[0].icon;
         descDay1.innerHTML = response.list[3].weather[0].description;
-        tempDay1.innerHTML= "Temp:" + ((Kelvin1*1.8)+32).toFixed(2) + "F";
+        tempDay1.innerHTML= displayFahrenheit(response.list[3].main.temp);
+
+        function displayFahrenheit (temp) {
+            var Kelvin = temp-273.15
+            return "Temp:" + ((Kelvin*1.8)+32).toFixed(2) + "F"
+        }
+
 
 //****DAY2 
         // // Display current weather data onto the page
 
-        currentCity.innerHTML = response.city.name;
-        currentIcon.innerHTML = response.list[11].weather[0].icon;
-        currentDesc.innerHTML = response.list[11].weather[0].description;
-        currentTemp.innerHTML = "Temp: " + response.list[11].main.temp + " K";
-        currentHumid.innerHTML = "Humidity: " + response.list[11].main.humidity + "%";
-        currentSpeed.innerHTML = "Wind Speed: " + response.list[11].wind.speed + " MPH";
+        // currentCity.innerHTML = response.city.name;
+        // currentIcon.innerHTML = response.list[11].weather[0].icon;
+        // currentDesc.innerHTML = response.list[11].weather[0].description;
+        // currentTemp.innerHTML = "Temp: " + response.list[11].main.temp + " K";
+        // currentHumid.innerHTML = "Humidity: " + response.list[11].main.humidity + "%";
+
 
         // // Display day 2 weather data to page
         let dateDay2 = document.getElementById("date-day2");
         let iconDay2 = document.getElementById("icon-day2");
         let descDay2 = document.getElementById("desc-day2");
         let tempDay2 = document.getElementById("temp-day2");
-        // var iconCode = currentIcon.innerHTML;
-
-        
-        // function iconUrl () {
-        //     if (iconCode === '01d') {
-        //         iconDay2.source.appendChild('./images/01d.png')
-        //     };
-        //     elseif (iconCode === '01n'); {
-        //         iconDay2.source.appendChild('./images/01n.png')
-        //     };
-        //     elseif (iconCode === '02d'); {
-        //         iconDay2.source.appendChild('./images/02d.png')
-        //     };
-        //     elseif (iconCode === '02n'); {
-        //         iconDay2.source.appendChild('./images/02n.png')
-        //     };
-        //     elseif (iconCode === '03d'); {
-        //         iconDay2.source.appendChild('./images/03d.png')
-        //     };
-        //     elseif (iconCode === '03n'); {
-        //         iconDay2.source.appendChild('./images/03n.png')
-        //     };
-        //     elseif (iconCode === '04d'); {
-        //         iconDay2.source.appendChild('./images/04d.png')
-        //     };
-        //     elseif (iconCode === '04n'); {
-        //         iconDay2.source.appendChild('./images/04n.png')
-        //     };
-        //     elseif (iconCode === '09d'); {
-        //         iconDay2.source.appendChild('./images/09d.png')
-        //     };
-        //     elseif (iconCode === '09n'); {
-        //         iconDay2.source.appendChild('./images/09n.png')
-        //     };
-        //     elseif (iconCode === '10d'); {
-        //         iconDay2.source.appendChild('./images/10d.png')
-        //     };
-        //     elseif (iconCode === '10n'); {
-        //         iconDay2.source.appendChild('./images/10n.png')
-        //     };
-        //     elseif (iconCode === '13d'); {
-        //         iconDay2.source.appendChild('./images/13d.png')
-        //     };
-        //     elseif (iconCode === '13n'); {
-        //         iconDay2.source.appendChild('./images/13n.png')
-        //     };
-        //     elseif (iconCode === '50d'); {
-        //         iconDay2.source.appendChild('./images/50d.png')
-        //     };
-        //     elseif (iconCode === '50n'); {
-        //         iconDay2.source.appendChild('./images/50n.png')
-        //     };
-        // };
-        // iconUrl();
-
-        
-
-        //$('#icon-day2').attr('src', iconUrl)
 
         dateDay2.innerHTML = response.list[11].dt_txt.replace("12:00:00", "");
         iconDay2.innerHTML = response.list[11].weather[0].icon;
         descDay2.innerHTML = response.list[11].weather[0].description;
-        tempDay2.innerHTML= "Temp: " + response.list[11].main.temp; 
+        tempDay2.innerHTML= displayFahrenheit(response.list[11].main.temp); 
         
-//****DAY3 
-        // // Display current weather data onto the page
-        currentCity.innerHTML = response.city.name;
-        currentIcon.innerHTML = response.list[19].weather[0].icon;
-        currentDesc.innerHTML = response.list[19].weather[0].description;
-        currentTemp.innerHTML = "Temp: " + response.list[19].main.temp + " K";
-        currentHumid.innerHTML = "Humidity: " + response.list[19].main.humidity + "%";
-        currentSpeed.innerHTML = "Wind Speed: " + response.list[19].wind.speed + " MPH";
+// //****DAY3 
+//         // // Display current weather data onto the page
+//         currentCity.innerHTML = response.city.name;
+//         currentIcon.innerHTML = response.list[19].weather[0].icon;
+//         currentDesc.innerHTML = response.list[19].weather[0].description;
+//         currentTemp.innerHTML = "Temp: " + response.list[19].main.temp + " K";
+//         currentHumid.innerHTML = "Humidity: " + response.list[19].main.humidity + "%";
+//         currentSpeed.innerHTML = "Wind Speed: " + response.list[19].wind.speed + " MPH";
 
-        // // Display day 3 weather data to page
+//         // // Display day 3 weather data to page
         let dateDay3 = document.getElementById("date-day3");
         let iconDay3 = document.getElementById("icon-day3");
         let descDay3 = document.getElementById("desc-day3");
@@ -283,16 +176,16 @@ const app = {
         dateDay3.innerHTML = response.list[19].dt_txt.replace("12:00:00", "");
         iconDay3.innerHTML = response.list[19].weather[0].icon;
         descDay3.innerHTML = response.list[19].weather[0].description;
-        tempDay3.innerHTML= "Temp: " + response.list[19].main.temp;
+        tempDay3.innerHTML= displayFahrenheit(response.list[19].main.temp);
         
- //****DAY4 
-        // // Display current weather data onto the page
-        currentCity.innerHTML = response.city.name;
-        currentIcon.innerHTML = response.list[0].weather[0].icon;
-        currentDesc.innerHTML = response.list[0].weather[0].description;
-        currentTemp.innerHTML = "Temp: " + response.list[0].main.temp + " K";
-        currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
-        currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
+//  //****DAY4 
+//         // // Display current weather data onto the page
+//         currentCity.innerHTML = response.city.name;
+//         currentIcon.innerHTML = response.list[0].weather[0].icon;
+//         currentDesc.innerHTML = response.list[0].weather[0].description;
+//         currentTemp.innerHTML = "Temp: " + response.list[0].main.temp + " K";
+//         currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
+//         currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
 
         // // Display day 2 weather data to page
         let dateDay4 = document.getElementById("date-day4");
@@ -303,16 +196,16 @@ const app = {
         dateDay4.innerHTML = response.list[27].dt_txt.replace("12:00:00", "");
         iconDay4.innerHTML = response.list[27].weather[0].icon;
         descDay4.innerHTML = response.list[27].weather[0].description;
-        tempDay4.innerHTML= "Temp: " + response.list[26].main.temp;   
+        tempDay4.innerHTML= displayFahrenheit(response.list[26].main.temp);   
         
  //****DAY5 
         // // Display current weather data onto the page
-        currentCity.innerHTML = response.city.name;
-        currentIcon.innerHTML = response.list[0].weather[0].icon;
-        currentDesc.innerHTML = response.list[0].weather[0].description;
-        currentTemp.innerHTML = "Temp: " + response.list[0].main.temp + " K";
-        currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
-        currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
+        // currentCity.innerHTML = response.city.name;
+        // currentIcon.innerHTML = response.list[0].weather[0].icon;
+        // currentDesc.innerHTML = response.list[0].weather[0].description;
+        // currentTemp.innerHTML = "Temp: " + response.list[0].main.temp + " K";
+        // currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
+        // currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
 
         // // Display day 5 weather data to page
         let dateDay5 = document.getElementById("date-day5");
@@ -323,7 +216,7 @@ const app = {
         dateDay5.innerHTML = response.list[35].dt_txt.replace("12:00:00", "");
         iconDay5.innerHTML = response.list[35].weather[0].icon;
         descDay5.innerHTML = response.list[35].weather[0].description;
-        tempDay5.innerHTML= "Temp: " + response.list[35].main.temp;             
+        tempDay5.innerHTML= displayFahrenheit(response.list[35].main.temp);             
     }
     // function temperatureConverter(valNum) {
     //     valNum = parseFloat(valNum);
@@ -402,12 +295,3 @@ fetch('https://date.nager.at/api/v3/NextPublicHolidaysWorldwide?per_page=5')
     });
 
 app.init();
-
-
-// let newTemp = currentTemp(this.value[i]);
-
-// function converter () {
-//     valNum=parseFloat(newTemp);
-//     document.getElementById("new-temp").innerHTML = (((valNum)-273.15)*1.8)+32;
-// }
-// converter();
