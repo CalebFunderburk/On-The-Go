@@ -86,11 +86,10 @@ const app = {
         let currentTemp = document.getElementById("current-temp");
         let currentHumid = document.getElementById("current-humid");
         let currentSpeed = document.getElementById("current-speed");
-        //let tempF = document.getElementById("tempF")
-        //let tempF = document.getElementById("tempF");
         var Kelvin = response.list[0].main.temp-273.15;
         
         
+        //map to convert icon response to local img
         const map = new Map();
 
         map.set('01d', './assets/images/01d.png')
@@ -120,14 +119,14 @@ const app = {
         currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
         currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
      
-          // Display day 1 weather data to page
+        // Display day 1 weather data to page
         let dateDay1 = document.getElementById("date-day1");
         let iconDay1 = document.getElementById("icon-day1");
         let descDay1 = document.getElementById("desc-day1");
         let tempDay1 = document.getElementById("temp-day1");
 
         dateDay1.innerHTML = response.list[3].dt_txt.replace("12:00:00", "");
-        iconDay1.innerHTML = response.list[3].weather[0].icon;
+        iconDay1.innerHTML = "<img src ='"+map.get(response.list[3].weather[0].icon)+"'/>";
         descDay1.innerHTML = response.list[3].weather[0].description;
         tempDay1.innerHTML= displayFahrenheit(response.list[3].main.temp);
 
@@ -136,57 +135,31 @@ const app = {
             return "Temp:" + ((Kelvin*1.8)+32).toFixed(2) + "F"
         }
 
-
 //****DAY2 
-        // // Display current weather data onto the page
-
-        // currentCity.innerHTML = response.city.name;
-        // currentIcon.innerHTML = response.list[11].weather[0].icon;
-        // currentDesc.innerHTML = response.list[11].weather[0].description;
-        // currentTemp.innerHTML = "Temp: " + response.list[11].main.temp + " K";
-        // currentHumid.innerHTML = "Humidity: " + response.list[11].main.humidity + "%";
-
-
-        // // Display day 2 weather data to page
+// Display day 2 weather data to page
         let dateDay2 = document.getElementById("date-day2");
         let iconDay2 = document.getElementById("icon-day2");
         let descDay2 = document.getElementById("desc-day2");
         let tempDay2 = document.getElementById("temp-day2");
 
         dateDay2.innerHTML = response.list[11].dt_txt.replace("12:00:00", "");
-        iconDay2.innerHTML = response.list[11].weather[0].icon;
+        iconDay2.innerHTML = "<img src ='"+map.get(response.list[11].weather[0].icon)+"'/>";
         descDay2.innerHTML = response.list[11].weather[0].description;
         tempDay2.innerHTML= displayFahrenheit(response.list[11].main.temp); 
         
 // //****DAY3 
-//         // // Display current weather data onto the page
-//         currentCity.innerHTML = response.city.name;
-//         currentIcon.innerHTML = response.list[19].weather[0].icon;
-//         currentDesc.innerHTML = response.list[19].weather[0].description;
-//         currentTemp.innerHTML = "Temp: " + response.list[19].main.temp + " K";
-//         currentHumid.innerHTML = "Humidity: " + response.list[19].main.humidity + "%";
-//         currentSpeed.innerHTML = "Wind Speed: " + response.list[19].wind.speed + " MPH";
-
-//         // // Display day 3 weather data to page
+// Display day 3 weather data to page
         let dateDay3 = document.getElementById("date-day3");
         let iconDay3 = document.getElementById("icon-day3");
         let descDay3 = document.getElementById("desc-day3");
         let tempDay3 = document.getElementById("temp-day3");
 
         dateDay3.innerHTML = response.list[19].dt_txt.replace("12:00:00", "");
-        iconDay3.innerHTML = response.list[19].weather[0].icon;
+        iconDay3.innerHTML = "<img src ='"+map.get(response.list[19].weather[0].icon)+"'/>";
         descDay3.innerHTML = response.list[19].weather[0].description;
         tempDay3.innerHTML= displayFahrenheit(response.list[19].main.temp);
         
-//  //****DAY4 
-//         // // Display current weather data onto the page
-//         currentCity.innerHTML = response.city.name;
-//         currentIcon.innerHTML = response.list[0].weather[0].icon;
-//         currentDesc.innerHTML = response.list[0].weather[0].description;
-//         currentTemp.innerHTML = "Temp: " + response.list[0].main.temp + " K";
-//         currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
-//         currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
-
+//****DAY4 
         // // Display day 2 weather data to page
         let dateDay4 = document.getElementById("date-day4");
         let iconDay4 = document.getElementById("icon-day4");
@@ -194,19 +167,11 @@ const app = {
         let tempDay4 = document.getElementById("temp-day4");
 
         dateDay4.innerHTML = response.list[27].dt_txt.replace("12:00:00", "");
-        iconDay4.innerHTML = response.list[27].weather[0].icon;
+        iconDay4.innerHTML = "<img src ='"+map.get(response.list[27].weather[0].icon)+"'/>";
         descDay4.innerHTML = response.list[27].weather[0].description;
-        tempDay4.innerHTML= displayFahrenheit(response.list[26].main.temp);   
+        tempDay4.innerHTML= displayFahrenheit(response.list[27].main.temp);   
         
  //****DAY5 
-        // // Display current weather data onto the page
-        // currentCity.innerHTML = response.city.name;
-        // currentIcon.innerHTML = response.list[0].weather[0].icon;
-        // currentDesc.innerHTML = response.list[0].weather[0].description;
-        // currentTemp.innerHTML = "Temp: " + response.list[0].main.temp + " K";
-        // currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
-        // currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
-
         // // Display day 5 weather data to page
         let dateDay5 = document.getElementById("date-day5");
         let iconDay5 = document.getElementById("icon-day5");
@@ -214,14 +179,10 @@ const app = {
         let tempDay5 = document.getElementById("temp-day5");
 
         dateDay5.innerHTML = response.list[35].dt_txt.replace("12:00:00", "");
-        iconDay5.innerHTML = response.list[35].weather[0].icon;
+        iconDay5.innerHTML = "<img src ='"+map.get(response.list[35].weather[0].icon)+"'/>";
         descDay5.innerHTML = response.list[35].weather[0].description;
         tempDay5.innerHTML= displayFahrenheit(response.list[35].main.temp);             
     }
-    // function temperatureConverter(valNum) {
-    //     valNum = parseFloat(valNum);
-    //     document.getElementById("current-temp").innerHTML = (valNum-32) / 1.8;
-    //   }
 }
 
 // Holiday API fetch request
@@ -293,5 +254,7 @@ fetch('https://date.nager.at/api/v3/NextPublicHolidaysWorldwide?per_page=5')
     .catch((err) => {
         console.log(err);
     });
+
+
 
 app.init();
