@@ -1,6 +1,6 @@
 // Display current date and time
 const currentTime = moment();
-$("p.time-display").html(currentTime.format("[Today's date is: ] dddd MMMM Do, YYYY h:mm a"));
+$("p.time-display").html(currentTime.format("dddd MMMM Do, YYYY h:mm a"));
 
 // Weather API function
 const app = {
@@ -96,6 +96,7 @@ const app = {
         }        
 
         // Variables for current weather area
+        // **Ask about var Kelvin**
         let currentCity = document.getElementById("current-city");
         let currentIcon = document.getElementById("current-icon");
         let currentDesc = document.getElementById("current-desc");
@@ -111,6 +112,10 @@ const app = {
         currentTemp.innerHTML = "Temp: " + ((Kelvin*1.8)+32).toFixed(2) + "F";
         currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
         currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
+
+        // "5-Day Forecast"
+        let forecastHeader = document.getElementById("forecast-header");
+        forecastHeader.innerHTML = "5-Day Forecast:";
      
         // Varibles for weather card 1
         let dateDay1 = document.getElementById("date-day1");
