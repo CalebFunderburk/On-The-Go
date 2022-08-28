@@ -1,13 +1,3 @@
-// Global Selectors
-let btn = document.querySelector(".btn");
-let inputValue = document.querySelector(".input-value");
-let cityName = document.querySelector(".city-name");
-let date = document.querySelector(".date");
-let pic = document.querySelector(".pic");
-let temp = document.querySelector(".temp");
-let wind = document.querySelector(".wind");
-let humid = document.querySelector(".humid");
-
 // Display current date and time
 const currentTime = moment();
 $("p.time-display").html(currentTime.format("[Today's date is: ] dddd MMMM Do, YYYY h:mm a"));
@@ -27,6 +17,7 @@ const app = {
 
     // API Fetch
     fetchWeather: () => {
+
         // Open Weather Map API Variables
         let lat = document.getElementById("latitude").value;
         let lon = document.getElementById("longitude").value;
@@ -35,10 +26,7 @@ const app = {
         let units = "standard";
         let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=${units}&lang=${lang}`;
 
-        // Caleb's Open Weather Map ID = bd92569b2643837c2eebddc7bd2b2560
-        // Original API link I was using = https://api.openweathermap.org/data/2.5/weather?q=${inputValue.value}&appid=3895e7bdd38cc88449bc0dc944a705c5 
-
-        // Fetch the weather
+        // Open Weather Map API fetch request
         fetch(url)
             .then((response) => {
                 if (!response.ok) throw new Error(response.statusText);
@@ -52,6 +40,7 @@ const app = {
 
     // Get the users current location
     getLocation: () => {
+
         // Default options
         let opts = {
             enableHighAccuracy: true,
@@ -78,18 +67,7 @@ const app = {
     showWeather: (response) => {
         console.log(response);
 
-
-        // Variable for DOM
-        let currentCity = document.getElementById("current-city");
-        let currentIcon = document.getElementById("current-icon");
-        let currentDesc = document.getElementById("current-desc");
-        let currentTemp = document.getElementById("current-temp");
-        let currentHumid = document.getElementById("current-humid");
-        let currentSpeed = document.getElementById("current-speed");
-        var Kelvin = response.list[0].main.temp-273.15;
-        
-        
-        //map to convert icon response to local img
+        //  Map to convert icon response to local img
         const map = new Map();
 
         map.set('01d', './assets/images/01d.png')
@@ -111,73 +89,84 @@ const app = {
         map.set('50d', './assets/images/50d.png')
         map.set('50n', './assets/images/50n.png');
 
-        // Display current weather data onto the page
+        // Convert Kelvin to Farenheit function
+        function displayFahrenheit (temp) {
+            var Kelvin = temp-273.15
+            return "Temp: " + ((Kelvin*1.8)+32).toFixed(2) + "F"
+        }        
+
+        // Variables for current weather area
+        let currentCity = document.getElementById("current-city");
+        let currentIcon = document.getElementById("current-icon");
+        let currentDesc = document.getElementById("current-desc");
+        let currentTemp = document.getElementById("current-temp");
+        let currentHumid = document.getElementById("current-humid");
+        let currentSpeed = document.getElementById("current-speed");
+        var Kelvin = response.list[0].main.temp-273.15;        
+
+        // Display current weather data in the current weather area
         currentCity.innerHTML = response.city.name;
         currentIcon.innerHTML = "<img src ='"+map.get(response.list[0].weather[0].icon)+"'/>";
         currentDesc.innerHTML = response.list[0].weather[0].description;
-        currentTemp.innerHTML = "Temp:" + ((Kelvin*1.8)+32).toFixed(2) + "F";
+        currentTemp.innerHTML = "Temp: " + ((Kelvin*1.8)+32).toFixed(2) + "F";
         currentHumid.innerHTML = "Humidity: " + response.list[0].main.humidity + "%";
         currentSpeed.innerHTML = "Wind Speed: " + response.list[0].wind.speed + " MPH";
      
-        // Display day 1 weather data to page
+        // Varibles for weather card 1
         let dateDay1 = document.getElementById("date-day1");
         let iconDay1 = document.getElementById("icon-day1");
         let descDay1 = document.getElementById("desc-day1");
         let tempDay1 = document.getElementById("temp-day1");
 
+        // Display day 1 weather data in weather card 1
         dateDay1.innerHTML = response.list[3].dt_txt.replace("12:00:00", "");
         iconDay1.innerHTML = "<img src ='"+map.get(response.list[3].weather[0].icon)+"'/>";
         descDay1.innerHTML = response.list[3].weather[0].description;
         tempDay1.innerHTML= displayFahrenheit(response.list[3].main.temp);
 
-        function displayFahrenheit (temp) {
-            var Kelvin = temp-273.15
-            return "Temp:" + ((Kelvin*1.8)+32).toFixed(2) + "F"
-        }
-
-//****DAY2 
-// Display day 2 weather data to page
+        // Varibles for weather card 2
         let dateDay2 = document.getElementById("date-day2");
         let iconDay2 = document.getElementById("icon-day2");
         let descDay2 = document.getElementById("desc-day2");
         let tempDay2 = document.getElementById("temp-day2");
 
+        // Display day 2 weather data in weather card 2
         dateDay2.innerHTML = response.list[11].dt_txt.replace("12:00:00", "");
         iconDay2.innerHTML = "<img src ='"+map.get(response.list[11].weather[0].icon)+"'/>";
         descDay2.innerHTML = response.list[11].weather[0].description;
         tempDay2.innerHTML= displayFahrenheit(response.list[11].main.temp); 
         
-// //****DAY3 
-// Display day 3 weather data to page
+        // Variables for weather card 3
         let dateDay3 = document.getElementById("date-day3");
         let iconDay3 = document.getElementById("icon-day3");
         let descDay3 = document.getElementById("desc-day3");
         let tempDay3 = document.getElementById("temp-day3");
 
+        // Display day 3 weather data in weather card 3        
         dateDay3.innerHTML = response.list[19].dt_txt.replace("12:00:00", "");
         iconDay3.innerHTML = "<img src ='"+map.get(response.list[19].weather[0].icon)+"'/>";
         descDay3.innerHTML = response.list[19].weather[0].description;
         tempDay3.innerHTML= displayFahrenheit(response.list[19].main.temp);
         
-//****DAY4 
-        // // Display day 2 weather data to page
+        // Variables for weather card 4
         let dateDay4 = document.getElementById("date-day4");
         let iconDay4 = document.getElementById("icon-day4");
         let descDay4 = document.getElementById("desc-day4");
         let tempDay4 = document.getElementById("temp-day4");
 
+        // Display day 4 weather data in weather card 4
         dateDay4.innerHTML = response.list[27].dt_txt.replace("12:00:00", "");
         iconDay4.innerHTML = "<img src ='"+map.get(response.list[27].weather[0].icon)+"'/>";
         descDay4.innerHTML = response.list[27].weather[0].description;
         tempDay4.innerHTML= displayFahrenheit(response.list[27].main.temp);   
         
- //****DAY5 
-        // // Display day 5 weather data to page
+        // Variables for weather card 5
         let dateDay5 = document.getElementById("date-day5");
         let iconDay5 = document.getElementById("icon-day5");
         let descDay5 = document.getElementById("desc-day5");
         let tempDay5 = document.getElementById("temp-day5");
 
+        // Display day 5 weather data in weather card 5
         dateDay5.innerHTML = response.list[35].dt_txt.replace("12:00:00", "");
         iconDay5.innerHTML = "<img src ='"+map.get(response.list[35].weather[0].icon)+"'/>";
         descDay5.innerHTML = response.list[35].weather[0].description;
@@ -328,7 +317,5 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
     .catch((err) => {
         console.log(err);
     });
-
-
 
 app.init();
