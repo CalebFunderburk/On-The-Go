@@ -93,7 +93,7 @@ const app = {
         function displayFahrenheit (temp) {
             var Kelvin = temp-273.15
             return "Temp: " + ((Kelvin*1.8)+32).toFixed(2) + "F"
-        }        
+        }
 
         // Variables for current weather area
         // **Ask about var Kelvin**
@@ -175,7 +175,26 @@ const app = {
         dateDay5.innerHTML = response.list[35].dt_txt.replace("12:00:00", "");
         iconDay5.innerHTML = "<img src ='"+map.get(response.list[35].weather[0].icon)+"'/>";
         descDay5.innerHTML = response.list[35].weather[0].description;
-        tempDay5.innerHTML= displayFahrenheit(response.list[35].main.temp);             
+        tempDay5.innerHTML= displayFahrenheit(response.list[35].main.temp); 
+        
+        // Add classes to style html elements
+        let cardContainer = document.getElementById("cards");
+        cardContainer.className = "columns is-one-fifth has-background-info m-5 p-2";
+
+        let card1 = document.getElementById("update-1");
+        card1.className = "column card"; 
+
+        let card2 = document.getElementById("update-2");
+        card2.className = "column card";
+
+        let card3 = document.getElementById("update-3");
+        card3.className = "column card";
+        
+        let card4 = document.getElementById("update-4");
+        card4.className = "column card";  
+        
+        let card5 = document.getElementById("update-5");
+        card5.className = "column card"; 
     }
 }
 
