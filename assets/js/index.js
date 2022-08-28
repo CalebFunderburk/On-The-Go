@@ -186,70 +186,144 @@ const app = {
 }
 
 // Holiday API fetch request
-fetch('https://date.nager.at/api/v3/NextPublicHolidaysWorldwide?per_page=5')
+fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
         console.log(data);
 
-        // Empty variables to hold holiday info
-        let data1 = "";
-        let data2 = "";
-        let data3 = "";
-        let data4 = "";
-        let data5 = "";
+        // Variables for card 1
+        let dateHoli1 = document.getElementById("date-holi1");
+        let localHoli1 = document.getElementById("local-holi1");
+        let commonHoli1 = document.getElementById("common-holi1");
 
-        // Display info for next 5 holidays
-        data.map(() => {
-            data1 = `<div class="card column">
-                        <p>${data[0].date}</p>
-                        <p>${data[0].localName}</p>
-                        <p>${data[0].name}</p>
-                        <p>${data[0].countryCode}</p>
-                     </div>`
-        });
-        document.getElementById("holi1").innerHTML = data1;
+        // Variables for card 2
+        let dateHoli2 = document.getElementById("date-holi2");
+        let localHoli2 = document.getElementById("local-holi2");
+        let commonHoli2 = document.getElementById("common-holi2");
 
-        data.map(() => {
-            data2 = `<div class="card column">
-                        <p>${data[1].date}</p>
-                        <p>${data[1].localName}</p>
-                        <p>${data[1].name}</p>
-                        <p>${data[1].countryCode}</p>
-                    </div>`
-        });
-        document.getElementById("holi2").innerHTML = data2;
+        // Variables for card 3
+        let dateHoli3 = document.getElementById("date-holi3");
+        let localHoli3 = document.getElementById("local-holi3");
+        let commonHoli3 = document.getElementById("common-holi3");
+        
+        // Variables for card 4
+        let dateHoli4 = document.getElementById("date-holi4");
+        let localHoli4 = document.getElementById("local-holi4");
+        let commonHoli4 = document.getElementById("common-holi4");
+        
+        // Variables for card 5
+        let dateHoli5 = document.getElementById("date-holi5");
+        let localHoli5 = document.getElementById("local-holi5");
+        let commonHoli5 = document.getElementById("common-holi5");        
 
-        data.map(() => {
-            data3 = `<div class="card column">
-                        <p>${data[2].date}</p>
-                        <p>${data[2].localName}</p>
-                        <p>${data[2].name}</p>
-                        <p>${data[2].countryCode}</p>
-                    </div>`
-        });
-        document.getElementById("holi3").innerHTML = data3;
+        // Display this data in card 1
+        dateHoli1.innerHTML = data[0].date
+        localHoli1.innerHTML = data[0].localName 
+        commonHoli1.innerHTML = data[0].name
 
-        data.map(() => {
-            data4 = `<div class="card column">
-                        <p>${data[3].date}</p>
-                        <p>${data[3].localName}</p>
-                        <p>${data[3].name}</p>
-                        <p>${data[3].countryCode}</p>
-                    </div>`
-        });
-        document.getElementById("holi4").innerHTML = data4;
+        // Display this data in card 2
+        dateHoli2.innerHTML = data[1].date
+        localHoli2.innerHTML = data[1].localName 
+        commonHoli2.innerHTML = data[1].name
 
-        data.map(() => {
-            data5 = `<div class="card column">
-                        <p>${data[4].date}</p>
-                        <p>${data[4].localName}</p>
-                        <p>${data[4].name}</p>
-                        <p>${data[4].countryCode}</p>
-                    </div>`
-        });
-        document.getElementById("holi5").innerHTML = data5;
+        // Display this data in card 3
+        dateHoli3.innerHTML = data[2].date
+        localHoli3.innerHTML = data[2].localName 
+        commonHoli3.innerHTML = data[2].name
+
+        // Display this data in card 4
+        dateHoli4.innerHTML = data[3].date
+        localHoli4.innerHTML = data[3].localName 
+        commonHoli4.innerHTML = data[3].name
+
+        // Display this data in card 5
+        dateHoli5.innerHTML = data[4].date
+        localHoli5.innerHTML = data[4].localName 
+        commonHoli5.innerHTML = data[4].name        
+
+        // Store country code as a variable
+        let countryCode1 = data[0].countryCode;
+        let countryCode2 = data[1].countryCode;
+        let countryCode3 = data[2].countryCode;
+        let countryCode4 = data[3].countryCode;
+        let countryCode5 = data[4].countryCode;
+
+        // Fetch data with countryCode1
+        fetch(`https://date.nager.at/api/v3/CountryInfo/${countryCode1}`)
+        .then (function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+
+            // Variable for card 1
+            let countryHoli1 = document.getElementById("country-holi1")
+
+            // Display this data in card 1
+            countryHoli1.innerHTML = data.commonName;
+        })
+
+        // Fetch data with countryCode2
+        fetch(`https://date.nager.at/api/v3/CountryInfo/${countryCode2}`)
+        .then (function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+
+            // Variable for card 2
+            let countryHoli2 = document.getElementById("country-holi2")
+
+            // Display this data in card 2
+            countryHoli2.innerHTML = data.commonName;
+        })
+
+        // Fetch data with countryCode3
+        fetch(`https://date.nager.at/api/v3/CountryInfo/${countryCode3}`)
+        .then (function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+
+            // Variable for card 3
+            let countryHoli3 = document.getElementById("country-holi3")
+
+            // Display this data in card 3
+            countryHoli3.innerHTML = data.commonName;
+        })
+
+        // Fetch data with countryCode4
+        fetch(`https://date.nager.at/api/v3/CountryInfo/${countryCode4}`)
+        .then (function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+
+            // Variable for card 4
+            let countryHoli4 = document.getElementById("country-holi4")
+
+            // Display this data in card 4
+            countryHoli4.innerHTML = data.commonName;
+        })
+        
+        // Fetch data with countryCode5
+        fetch(`https://date.nager.at/api/v3/CountryInfo/${countryCode5}`)
+        .then (function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+
+            // Variable for card 5
+            let countryHoli5 = document.getElementById("country-holi5")
+
+            // Display this data in card 5
+            countryHoli5.innerHTML = data.commonName;
+        })         
     })
     .catch((err) => {
         console.log(err);
