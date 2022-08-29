@@ -7,12 +7,12 @@ const app = {
 
     // Event listeners for buttons
     init: () => {
+        document
+        .getElementById("btn-get")
+        .addEventListener("click", app.getLocation);
       document
         .getElementById("btn-current")
         .addEventListener("click", app.fetchWeather);
-      document
-        .getElementById("btn-get")
-        .addEventListener("click", app.getLocation);
     },
 
     // API Fetch
@@ -51,11 +51,22 @@ const app = {
     },
 
     // Geolocation success
+    // What Caleb did here is questionable
     success: (position) => {
-        document.getElementById("latitude").value = 
+        let latData = document.getElementById("latitude").value = 
             position.coords.latitude.toFixed(2);
-        document.getElementById("longitude").value =
+        let lonData = document.getElementById("longitude").value =
             position.coords.longitude.toFixed(2);
+
+        // Save cordinate data in an array
+        let userLoc = {
+            lat: `${latData}`,
+            lon: `${lonData}`
+        }
+
+        // Save user cordinate data to local storage
+        localStorage.setItem("User Location", JSON.stringify(userLoc));
+
     },
 
     // Geolocation failed
