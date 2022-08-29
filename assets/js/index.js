@@ -7,10 +7,10 @@ const app = {
 
     // Event listeners for buttons
     init: () => {
-        document
+    document
         .getElementById("btn-get")
         .addEventListener("click", app.getLocation);
-      document
+    document
         .getElementById("btn-current")
         .addEventListener("click", app.fetchWeather);
     },
