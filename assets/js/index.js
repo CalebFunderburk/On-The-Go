@@ -181,20 +181,45 @@ const app = {
         let cardContainer = document.getElementById("cards");
         cardContainer.className = "columns is-one-fifth has-background-info m-5 p-2";
 
+        // Card 1
         let card1 = document.getElementById("update-1");
-        card1.className = "column card"; 
+        card1.className = "column card";         
+        dateDay1.className = "is-size-4";
+        iconDay1.className = "image is-64x64";
+        descDay1.className = "is-size-4";
+        tempDay1.className = "is-size-4";        
 
+        // Card 2
         let card2 = document.getElementById("update-2");
         card2.className = "column card";
+        dateDay2.className = "is-size-4";
+        iconDay2.className = "image is-64x64";
+        descDay2.className = "is-size-4";
+        tempDay2.className = "is-size-4";
 
+        // Card 3
         let card3 = document.getElementById("update-3");
         card3.className = "column card";
+        dateDay3.className = "is-size-4";
+        iconDay3.className = "image is-64x64";
+        descDay3.className = "is-size-4";
+        tempDay3.className = "is-size-4";
         
+        // Card 4
         let card4 = document.getElementById("update-4");
-        card4.className = "column card";  
+        card4.className = "column card";
+        dateDay4.className = "is-size-4";
+        iconDay4.className = "image is-64x64";
+        descDay4.className = "is-size-4";
+        tempDay4.className = "is-size-4";
         
+        // Card 5
         let card5 = document.getElementById("update-5");
         card5.className = "column card"; 
+        dateDay5.className = "is-size-4";
+        iconDay5.className = "image is-64x64";
+        descDay5.className = "is-size-4";
+        tempDay5.className = "is-size-4";
     }
 }
 
