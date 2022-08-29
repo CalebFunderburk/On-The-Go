@@ -135,7 +135,7 @@ const app = {
         let tempDay1 = document.getElementById("temp-day1");
 
         // Format day 1 date
-        dateDataDay1 = response.list[3].dt_txt;
+        dateDataDay1 = response.list[4].dt_txt;
         let day1 = new Date(dateDataDay1).getDate();
         let month1 = new Date(dateDataDay1).getMonth() + 1;
         let year1 = new Date(dateDataDay1).getFullYear();
@@ -143,9 +143,9 @@ const app = {
 
         // Display day 1 weather data in weather card 1
         dateDay1.innerHTML = dateFormat1;
-        iconDay1.innerHTML = "<img src ='"+map.get(response.list[3].weather[0].icon)+"'/>";
-        descDay1.innerHTML = response.list[3].weather[0].description;
-        tempDay1.innerHTML= displayFahrenheit(response.list[3].main.temp);
+        iconDay1.innerHTML = "<img src ='"+map.get(response.list[4].weather[0].icon)+"'/>";
+        descDay1.innerHTML = response.list[4].weather[0].description;
+        tempDay1.innerHTML= displayFahrenheit(response.list[4].main.temp);
 
         // Varibles for weather card 2
         let dateDay2 = document.getElementById("date-day2");
@@ -154,17 +154,17 @@ const app = {
         let tempDay2 = document.getElementById("temp-day2");
 
         // Format day 2 date
-        dateDataDay2 = response.list[11].dt_txt;
-        let day2 = new Date(dateDataDay1).getDate();
-        let month2 = new Date(dateDataDay1).getMonth() + 1;
-        let year2 = new Date(dateDataDay1).getFullYear();
+        dateDataDay2 = response.list[12].dt_txt;
+        let day2 = new Date(dateDataDay2).getDate();
+        let month2 = new Date(dateDataDay2).getMonth() + 1;
+        let year2 = new Date(dateDataDay2).getFullYear();
         let dateFormat2 = `${month2}/${day2}/${year2}`;
 
         // Display day 2 weather data in weather card 2
         dateDay2.innerHTML = dateFormat2;
-        iconDay2.innerHTML = "<img src ='"+map.get(response.list[11].weather[0].icon)+"'/>";
-        descDay2.innerHTML = response.list[11].weather[0].description;
-        tempDay2.innerHTML= displayFahrenheit(response.list[11].main.temp); 
+        iconDay2.innerHTML = "<img src ='"+map.get(response.list[12].weather[0].icon)+"'/>";
+        descDay2.innerHTML = response.list[12].weather[0].description;
+        tempDay2.innerHTML= displayFahrenheit(response.list[12].main.temp); 
         
         // Variables for weather card 3
         let dateDay3 = document.getElementById("date-day3");
@@ -173,7 +173,7 @@ const app = {
         let tempDay3 = document.getElementById("temp-day3");
 
         // Format day 3 date
-        dateDataDay3 = response.list[19].dt_txt;
+        dateDataDay3 = response.list[20].dt_txt;
         let day3 = new Date(dateDataDay3).getDate();
         let month3 = new Date(dateDataDay3).getMonth() + 1;
         let year3 = new Date(dateDataDay3).getFullYear();
@@ -181,9 +181,9 @@ const app = {
 
         // Display day 3 weather data in weather card 3
         dateDay3.innerHTML = dateFormat3;
-        iconDay3.innerHTML = "<img src ='"+map.get(response.list[19].weather[0].icon)+"'/>";
-        descDay3.innerHTML = response.list[19].weather[0].description;
-        tempDay3.innerHTML= displayFahrenheit(response.list[19].main.temp);
+        iconDay3.innerHTML = "<img src ='"+map.get(response.list[20].weather[0].icon)+"'/>";
+        descDay3.innerHTML = response.list[20].weather[0].description;
+        tempDay3.innerHTML= displayFahrenheit(response.list[20].main.temp);
         
         // Variables for weather card 4
         let dateDay4 = document.getElementById("date-day4");
@@ -192,7 +192,7 @@ const app = {
         let tempDay4 = document.getElementById("temp-day4");
 
         // Format day 4 date
-        dateDataDay4 = response.list[27].dt_txt;
+        dateDataDay4 = response.list[28].dt_txt;
         let day4 = new Date(dateDataDay4).getDate();
         let month4 = new Date(dateDataDay4).getMonth() + 1;
         let year4 = new Date(dateDataDay4).getFullYear();
@@ -200,9 +200,9 @@ const app = {
 
         // Display day 4 weather data in weather card 4
         dateDay4.innerHTML = dateFormat4;
-        iconDay4.innerHTML = "<img src ='"+map.get(response.list[27].weather[0].icon)+"'/>";
-        descDay4.innerHTML = response.list[27].weather[0].description;
-        tempDay4.innerHTML= displayFahrenheit(response.list[27].main.temp);   
+        iconDay4.innerHTML = "<img src ='"+map.get(response.list[28].weather[0].icon)+"'/>";
+        descDay4.innerHTML = response.list[28].weather[0].description;
+        tempDay4.innerHTML= displayFahrenheit(response.list[28].main.temp);   
         
         // Variables for weather card 5
         let dateDay5 = document.getElementById("date-day5");
@@ -211,7 +211,7 @@ const app = {
         let tempDay5 = document.getElementById("temp-day5");
 
         // Format day 5 date
-        dateDataDay5 = response.list[35].dt_txt;
+        dateDataDay5 = response.list[36].dt_txt;
         let day5 = new Date(dateDataDay5).getDate();
         let month5 = new Date(dateDataDay5).getMonth() + 1;
         let year5 = new Date(dateDataDay5).getFullYear();
@@ -219,9 +219,9 @@ const app = {
 
         // Display day 5 weather data in weather card 5
         dateDay5.innerHTML = dateFormat5;
-        iconDay5.innerHTML = "<img src ='"+map.get(response.list[35].weather[0].icon)+"'/>";
-        descDay5.innerHTML = response.list[35].weather[0].description;
-        tempDay5.innerHTML= displayFahrenheit(response.list[35].main.temp); 
+        iconDay5.innerHTML = "<img src ='"+map.get(response.list[36].weather[0].icon)+"'/>";
+        descDay5.innerHTML = response.list[36].weather[0].description;
+        tempDay5.innerHTML= displayFahrenheit(response.list[36].main.temp); 
         
         // Add classes to style html elements
         // Current weather container
@@ -479,4 +479,4 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
         console.log(err);
     });
 
-app.init();
+app.init();  
