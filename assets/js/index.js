@@ -178,12 +178,23 @@ const app = {
         tempDay5.innerHTML= displayFahrenheit(response.list[35].main.temp); 
         
         // Add classes to style html elements
+        // Current weather container
+        let currentContainer = document.getElementById("current-weather");
+        currentContainer.className = "hero has-text-left has-background-info m-5 p-2";
+        currentCity.className = "has-text-info-light is-size-3";
+        currentIcon.className = "image is-96x96";
+        currentDesc.className = "has-text-info-light is-size-4";
+        currentTemp.className = "has-text-info-light is-size-4";
+        currentHumid.className = "has-text-info-light is-size-4";
+        currentSpeed.className = "has-text-info-light is-size-4";
+
+        // Cards container
         let cardContainer = document.getElementById("cards");
         cardContainer.className = "columns is-one-fifth has-background-info m-5 p-2";
 
         // Card 1
         let card1 = document.getElementById("update-1");
-        card1.className = "column card";         
+        card1.className = "column card m-3";         
         dateDay1.className = "is-size-4";
         iconDay1.className = "image is-64x64";
         descDay1.className = "is-size-4";
@@ -191,7 +202,7 @@ const app = {
 
         // Card 2
         let card2 = document.getElementById("update-2");
-        card2.className = "column card";
+        card2.className = "column card m-3";
         dateDay2.className = "is-size-4";
         iconDay2.className = "image is-64x64";
         descDay2.className = "is-size-4";
@@ -199,7 +210,7 @@ const app = {
 
         // Card 3
         let card3 = document.getElementById("update-3");
-        card3.className = "column card";
+        card3.className = "column card m-3";
         dateDay3.className = "is-size-4";
         iconDay3.className = "image is-64x64";
         descDay3.className = "is-size-4";
@@ -207,7 +218,7 @@ const app = {
         
         // Card 4
         let card4 = document.getElementById("update-4");
-        card4.className = "column card";
+        card4.className = "column card m-3";
         dateDay4.className = "is-size-4";
         iconDay4.className = "image is-64x64";
         descDay4.className = "is-size-4";
@@ -215,7 +226,7 @@ const app = {
         
         // Card 5
         let card5 = document.getElementById("update-5");
-        card5.className = "column card"; 
+        card5.className = "column card m-3"; 
         dateDay5.className = "is-size-4";
         iconDay5.className = "image is-64x64";
         descDay5.className = "is-size-4";
@@ -260,26 +271,41 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
         dateHoli1.innerHTML = data[0].date
         localHoli1.innerHTML = data[0].localName 
         commonHoli1.innerHTML = data[0].name
+        dateHoli1.className = "is-size-6";
+        localHoli1.className = "is-size-6";
+        commonHoli1.className = "is-size-6";        
 
         // Display this data in card 2
         dateHoli2.innerHTML = data[1].date
         localHoli2.innerHTML = data[1].localName 
         commonHoli2.innerHTML = data[1].name
+        dateHoli2.className = "is-size-6";
+        localHoli2.className = "is-size-6";
+        commonHoli2.className = "is-size-6"; 
 
         // Display this data in card 3
         dateHoli3.innerHTML = data[2].date
         localHoli3.innerHTML = data[2].localName 
         commonHoli3.innerHTML = data[2].name
+        dateHoli3.className = "is-size-6";
+        localHoli3.className = "is-size-6";
+        commonHoli3.className = "is-size-6"; 
 
         // Display this data in card 4
         dateHoli4.innerHTML = data[3].date
         localHoli4.innerHTML = data[3].localName 
         commonHoli4.innerHTML = data[3].name
+        dateHoli4.className = "is-size-6";
+        localHoli4.className = "is-size-6";
+        commonHoli4.className = "is-size-6"; 
 
         // Display this data in card 5
         dateHoli5.innerHTML = data[4].date
         localHoli5.innerHTML = data[4].localName 
-        commonHoli5.innerHTML = data[4].name        
+        commonHoli5.innerHTML = data[4].name
+        dateHoli5.className = "is-size-6";
+        localHoli5.className = "is-size-6";
+        commonHoli5.className = "is-size-6";      
 
         // Store country code as a variable
         let countryCode1 = data[0].countryCode;
@@ -301,6 +327,7 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
 
             // Display this data in card 1
             countryHoli1.innerHTML = data.commonName;
+            countryHoli1.className = "is-size-6";
         })
 
         // Fetch data with countryCode2
@@ -316,6 +343,7 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
 
             // Display this data in card 2
             countryHoli2.innerHTML = data.commonName;
+            countryHoli2.className = "is-size-6";
         })
 
         // Fetch data with countryCode3
@@ -331,6 +359,7 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
 
             // Display this data in card 3
             countryHoli3.innerHTML = data.commonName;
+            countryHoli3.className = "is-size-6";
         })
 
         // Fetch data with countryCode4
@@ -346,6 +375,7 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
 
             // Display this data in card 4
             countryHoli4.innerHTML = data.commonName;
+            countryHoli4.className = "is-size-6";
         })
         
         // Fetch data with countryCode5
@@ -361,6 +391,7 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
 
             // Display this data in card 5
             countryHoli5.innerHTML = data.commonName;
+            countryHoli5.className = "is-size-6";
         })         
     })
     .catch((err) => {

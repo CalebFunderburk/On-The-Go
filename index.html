@@ -11,23 +11,23 @@
     <script src="./assets/js/index.js" defer></script>
     <title>Weather Knower</title>
 </head>
-<body>
+<body class="has-background-dark">
 
     <!-- Header -->
-    <header id="header" class="box has-background-info has-text-centered p-3 has-text-info-light">
-        <h1 class="is-size-1">On The Go</h1>
-        <p id="currentDay" class="time-display is-size-4"></p>
+    <header id="header" class="box has-background-info has-text-centered p-3">
+        <h1 class="is-size-1 has-text-info-light">On The Go</h1>
+        <p id="currentDay" class="time-display is-size-4 has-text-info-light"></p>
     </header>
 
     <!-- Search -->
     <nav id="search" class="has-text-left m-5 p-2">
-        <h2 class="is-size-3 has-text-centered">Get your current local weather & a forecast for the next 5 days!</h2>
+        <h2 class="is-size-3 has-text-centered has-text-info-light">Get your current local weather & a forecast for the next 5 days!</h2>
         <form id="user-form" class="has-text-centered my-2">
             <button id="btn-get" class="is-size-4 mb-4" type="button">Use Current Location</button>
             <br/>
-            <span class="is-size-5 has-text-weight-bold">Lat:</span>
+            <span class="is-size-5 has-text-weight-bold has-text-info-light">Lat:</span>
             <input id="latitude" class="lat-value is-size-6" type="text" inputmode="numeric" placeholder="Latitude" value="42.98"/>
-            <span class="is-size-5 has-text-weight-bold">Lon:</span>
+            <span class="is-size-5 has-text-weight-bold has-text-info-light">Lon:</span>
             <input id="longitude" class="lon-value is-size-6" type="text" inputmode="numeric" placeholder="Longitude" value="-81.23"/>
             <br/>
             <button id="btn-current" class="is-size-4 mt-4" type="button">Get Weather</button>
@@ -36,25 +36,25 @@
 
     <!-- Current Weather Stats -->
     <!-- **Ask Kenan about icon and description classes & tempF ID** -->
-    <div class="hero has-text-left m-5 p-2">
-        <div id="current-city" class="is-size-3">
+    <div id="current-weather">
+        <div id="current-city">
         </div>
-        <div id="current-icon" class="icon image is-96x96">
+        <div id="current-icon" class="icon">
         </div>
-        <div id="current-desc" class="description is-size-4">
+        <div id="current-desc" class="description">
         </div>
-        <div id="current-temp" class="is-size-4">
+        <div id="current-temp">
         </div>
-        <div id="current-humid" class="is-size-4">
+        <div id="current-humid">
         </div>
-        <div id="current-speed" class="is-size-4">
+        <div id="current-speed">
         </div>
         <div id="tempF"></div>
     </div>
 
     <!-- Card Section-->
     <!-- **Ask about is-one-fifth class and container element** -->
-    <h3 id="forecast-header" class="has-text-weight-bold is-size-3 m-5"></h3>
+    <h3 id="forecast-header" class="has-text-weight-bold is-size-3 has-text-info-light m-5"></h3>
     <container id="cards">
 
         <!-- Card 1 -->
@@ -119,7 +119,7 @@
     </container>
 
     <!-- Holiday-->
-    <h4 class="has-text-centered has-text-weight-bold is-size-3 m-5">What's going on in the world?</h4>
+    <h4 class="has-text-centered has-text-weight-bold is-size-3 has-text-info-light m-5">What's going on in the world?</h4>
     <div class="columns has-text-centered">
 
         <!-- Card 1 -->
