@@ -216,7 +216,7 @@ const app = {
         // Current weather container
         let currentContainer = document.getElementById("current-weather");
         currentContainer.className = "hero has-text-left has-background-info m-5 p-2";
-        currentCity.className = "has-text-info-light is-size-3";
+        currentCity.className = "has-text-info-light has-text-weight-bold is-size-3";
         currentIcon.className = "image is-96x96";
         currentDesc.className = "has-text-info-light is-size-4";
         currentTemp.className = "has-text-info-light is-size-4";
