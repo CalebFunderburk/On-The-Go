@@ -123,8 +123,15 @@ const app = {
         let descDay1 = document.getElementById("desc-day1");
         let tempDay1 = document.getElementById("temp-day1");
 
+        // Format day 1 date
+        dateDataDay1 = response.list[3].dt_txt;
+        let day1 = new Date(dateDataDay1).getDate();
+        let month1 = new Date(dateDataDay1).getMonth() + 1;
+        let year1 = new Date(dateDataDay1).getFullYear();
+        let dateFormat1 = `${month1}/${day1}/${year1}`;
+
         // Display day 1 weather data in weather card 1
-        dateDay1.innerHTML = response.list[3].dt_txt.replace("12:00:00", "");
+        dateDay1.innerHTML = dateFormat1;
         iconDay1.innerHTML = "<img src ='"+map.get(response.list[3].weather[0].icon)+"'/>";
         descDay1.innerHTML = response.list[3].weather[0].description;
         tempDay1.innerHTML= displayFahrenheit(response.list[3].main.temp);
@@ -135,8 +142,15 @@ const app = {
         let descDay2 = document.getElementById("desc-day2");
         let tempDay2 = document.getElementById("temp-day2");
 
+        // Format day 2 date
+        dateDataDay2 = response.list[11].dt_txt;
+        let day2 = new Date(dateDataDay1).getDate();
+        let month2 = new Date(dateDataDay1).getMonth() + 1;
+        let year2 = new Date(dateDataDay1).getFullYear();
+        let dateFormat2 = `${month2}/${day2}/${year2}`;
+
         // Display day 2 weather data in weather card 2
-        dateDay2.innerHTML = response.list[11].dt_txt.replace("12:00:00", "");
+        dateDay2.innerHTML = dateFormat2;
         iconDay2.innerHTML = "<img src ='"+map.get(response.list[11].weather[0].icon)+"'/>";
         descDay2.innerHTML = response.list[11].weather[0].description;
         tempDay2.innerHTML= displayFahrenheit(response.list[11].main.temp); 
@@ -147,8 +161,15 @@ const app = {
         let descDay3 = document.getElementById("desc-day3");
         let tempDay3 = document.getElementById("temp-day3");
 
-        // Display day 3 weather data in weather card 3        
-        dateDay3.innerHTML = response.list[19].dt_txt.replace("12:00:00", "");
+        // Format day 3 date
+        dateDataDay3 = response.list[19].dt_txt;
+        let day3 = new Date(dateDataDay3).getDate();
+        let month3 = new Date(dateDataDay3).getMonth() + 1;
+        let year3 = new Date(dateDataDay3).getFullYear();
+        let dateFormat3 = `${month3}/${day3}/${year3}`;
+
+        // Display day 3 weather data in weather card 3
+        dateDay3.innerHTML = dateFormat3;
         iconDay3.innerHTML = "<img src ='"+map.get(response.list[19].weather[0].icon)+"'/>";
         descDay3.innerHTML = response.list[19].weather[0].description;
         tempDay3.innerHTML= displayFahrenheit(response.list[19].main.temp);
@@ -159,8 +180,15 @@ const app = {
         let descDay4 = document.getElementById("desc-day4");
         let tempDay4 = document.getElementById("temp-day4");
 
+        // Format day 4 date
+        dateDataDay4 = response.list[27].dt_txt;
+        let day4 = new Date(dateDataDay4).getDate();
+        let month4 = new Date(dateDataDay4).getMonth() + 1;
+        let year4 = new Date(dateDataDay4).getFullYear();
+        let dateFormat4 = `${month4}/${day4}/${year4}`;
+
         // Display day 4 weather data in weather card 4
-        dateDay4.innerHTML = response.list[27].dt_txt.replace("12:00:00", "");
+        dateDay4.innerHTML = dateFormat4;
         iconDay4.innerHTML = "<img src ='"+map.get(response.list[27].weather[0].icon)+"'/>";
         descDay4.innerHTML = response.list[27].weather[0].description;
         tempDay4.innerHTML= displayFahrenheit(response.list[27].main.temp);   
@@ -171,8 +199,15 @@ const app = {
         let descDay5 = document.getElementById("desc-day5");
         let tempDay5 = document.getElementById("temp-day5");
 
+        // Format day 5 date
+        dateDataDay5 = response.list[35].dt_txt;
+        let day5 = new Date(dateDataDay5).getDate();
+        let month5 = new Date(dateDataDay5).getMonth() + 1;
+        let year5 = new Date(dateDataDay5).getFullYear();
+        let dateFormat5 = `${month5}/${day5}/${year5}`;
+
         // Display day 5 weather data in weather card 5
-        dateDay5.innerHTML = response.list[35].dt_txt.replace("12:00:00", "");
+        dateDay5.innerHTML = dateFormat5;
         iconDay5.innerHTML = "<img src ='"+map.get(response.list[35].weather[0].icon)+"'/>";
         descDay5.innerHTML = response.list[35].weather[0].description;
         tempDay5.innerHTML= displayFahrenheit(response.list[35].main.temp); 
@@ -265,44 +300,79 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
         // Variables for card 5
         let dateHoli5 = document.getElementById("date-holi5");
         let localHoli5 = document.getElementById("local-holi5");
-        let commonHoli5 = document.getElementById("common-holi5");        
+        let commonHoli5 = document.getElementById("common-holi5");
+        
+        // Format first date
+        dateDataHoli1 = data[0].date;
+        let holiDay1 = new Date(dateDataHoli1).getDate() + 1;
+        let holiMonth1 = new Date(dateDataHoli1).getMonth() + 1;
+        let holiYear1 = new Date(dateDataHoli1).getFullYear();
+        let holiDateFormat1 = `${holiMonth1}/${holiDay1}/${holiYear1}`;
 
         // Display this data in card 1
-        dateHoli1.innerHTML = data[0].date
-        localHoli1.innerHTML = data[0].localName 
-        commonHoli1.innerHTML = data[0].name
+        dateHoli1.innerHTML = holiDateFormat1;
+        localHoli1.innerHTML = data[0].localName;
+        commonHoli1.innerHTML = data[0].name;
         dateHoli1.className = "is-size-6";
         localHoli1.className = "is-size-6";
         commonHoli1.className = "is-size-6";        
 
+        // Format second date
+        dateDataHoli2 = data[1].date;
+        let holiDay2 = new Date(dateDataHoli2).getDate() + 1;
+        let holiMonth2 = new Date(dateDataHoli2).getMonth() + 1;
+        let holiYear2 = new Date(dateDataHoli2).getFullYear();
+        let holiDateFormat2 = `${holiMonth2}/${holiDay2}/${holiYear2}`;
+
         // Display this data in card 2
-        dateHoli2.innerHTML = data[1].date
-        localHoli2.innerHTML = data[1].localName 
-        commonHoli2.innerHTML = data[1].name
+        dateHoli2.innerHTML = holiDateFormat2;
+        localHoli2.innerHTML = data[1].localName;
+        commonHoli2.innerHTML = data[1].name;
         dateHoli2.className = "is-size-6";
         localHoli2.className = "is-size-6";
         commonHoli2.className = "is-size-6"; 
 
+        // Format third date
+        dateDataHoli3 = data[2].date;
+        let holiDay3 = new Date(dateDataHoli3).getDate() + 1;
+        let holiMonth3 = new Date(dateDataHoli3).getMonth() + 1;
+        let holiYear3 = new Date(dateDataHoli3).getFullYear();
+        let holiDateFormat3 = `${holiMonth3}/${holiDay3}/${holiYear3}`;
+
         // Display this data in card 3
-        dateHoli3.innerHTML = data[2].date
-        localHoli3.innerHTML = data[2].localName 
-        commonHoli3.innerHTML = data[2].name
+        dateHoli3.innerHTML = holiDateFormat3;
+        localHoli3.innerHTML = data[2].localName;
+        commonHoli3.innerHTML = data[2].name;
         dateHoli3.className = "is-size-6";
         localHoli3.className = "is-size-6";
         commonHoli3.className = "is-size-6"; 
 
+        // Format fourth date
+        dateDataHoli4 = data[3].date;
+        let holiDay4 = new Date(dateDataHoli4).getDate() + 1;
+        let holiMonth4 = new Date(dateDataHoli4).getMonth() + 1;
+        let holiYear4 = new Date(dateDataHoli4).getFullYear();
+        let holiDateFormat4 = `${holiMonth4}/${holiDay4}/${holiYear4}`;
+
         // Display this data in card 4
-        dateHoli4.innerHTML = data[3].date
-        localHoli4.innerHTML = data[3].localName 
-        commonHoli4.innerHTML = data[3].name
+        dateHoli4.innerHTML = holiDateFormat4;
+        localHoli4.innerHTML = data[3].localName;
+        commonHoli4.innerHTML = data[3].name;
         dateHoli4.className = "is-size-6";
         localHoli4.className = "is-size-6";
         commonHoli4.className = "is-size-6"; 
 
-        // Display this data in card 5
-        dateHoli5.innerHTML = data[4].date
-        localHoli5.innerHTML = data[4].localName 
-        commonHoli5.innerHTML = data[4].name
+        // Format fifth date
+        dateDataHoli5 = data[4].date;
+        let holiDay5 = new Date(dateDataHoli5).getDate() + 1;
+        let holiMonth5 = new Date(dateDataHoli5).getMonth() + 1;
+        let holiYear5 = new Date(dateDataHoli5).getFullYear();
+        let holiDateFormat5 = `${holiMonth5}/${holiDay5}/${holiYear5}`;
+
+        // Display this data in card 1
+        dateHoli5.innerHTML = holiDateFormat5;
+        localHoli5.innerHTML = data[4].localName;
+        commonHoli5.innerHTML = data[4].name;
         dateHoli5.className = "is-size-6";
         localHoli5.className = "is-size-6";
         commonHoli5.className = "is-size-6";      
