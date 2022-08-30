@@ -226,25 +226,27 @@ const app = {
         // Add classes to style html elements
         // Current weather container
         let currentContainer = document.getElementById("current-weather");
-        currentContainer.className = "hero has-text-left has-background-info m-5 p-2";
+        currentContainer.className = "hero has-text-left m-5 p-2";
         currentCity.className = "has-text-info-light has-text-weight-bold is-size-3";
         currentIcon.className = "image is-96x96";
         currentDesc.className = "has-text-info-light is-size-4";
         currentTemp.className = "has-text-info-light is-size-4";
         currentHumid.className = "has-text-info-light is-size-4";
         currentSpeed.className = "has-text-info-light is-size-4";
+        currentContainer.style.backgroundColor = "rgb(0,0,0)"
 
         // Cards container
         let cardContainer = document.getElementById("cards");
-        cardContainer.className = "columns is-one-fifth has-background-info m-5 p-2";
+        cardContainer.className = "columns is-one-fifth  m-5 p-2";
 
         // Card 1
         let card1 = document.getElementById("update-1");
-        card1.className = "column card m-3";         
+        card1.className = "column card m-3";        
         dateDay1.className = "is-size-4";
         iconDay1.className = "image is-64x64";
         descDay1.className = "is-size-4";
-        tempDay1.className = "is-size-4";        
+        tempDay1.className = "is-size-4"; 
+        card1.style.backgroundImage = "linear-grandient(#185EE6, #29BFF0)"     
 
         // Card 2
         let card2 = document.getElementById("update-2");
