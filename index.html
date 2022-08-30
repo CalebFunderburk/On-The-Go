@@ -14,37 +14,36 @@
 <body class="has-background-dark">
 
     <!-- Header -->
-    <header id="header" class="box has-background-info has-text-centered p-3">
-        <h1 class="is-size-1 has-text-info-light">On The Go</h1>
-        <p id="currentDay" class="time-display is-size-4 has-text-info-light"></p>
+    <header id="header" class="box has-text-centered p-3">
+        <img src="./assets/images/logo.png" alt="Weather On The Go">
+        <p id="currentDay" class="time-display is-size-4"></p>
     </header>
 
     <!-- Search -->
     <nav id="search" class="has-text-left m-5 p-2">
-        <h2 class="is-size-3 has-text-centered has-text-info-light">Get your current local weather & a forecast for the next 5 days!</h2>
+        <h2 class="is-size-3 has-text-centered">Get your current local weather & a forecast for the next 5 days!</h2>
         <form id="user-form" class="has-text-centered my-2">
             <button id="btn-get" class="is-size-4 mb-4" type="button">Use Current Location</button>
             <br/>
-            <span class="is-size-5 has-text-weight-bold has-text-info-light">Lat:</span>
+            <span class="is-size-5 has-text-weight-bold">Lat:</span>
             <br/>
             <input id="latitude" class="lat-value is-size-6" type="text" inputmode="numeric" placeholder="Latitude" value="42.98"/>
             <br/>
-            <span class="is-size-5 has-text-weight-bold has-text-info-light">Lon:</span>
+            <span class="is-size-5 has-text-weight-bold">Lon:</span>
             <br/>
             <input id="longitude" class="lon-value is-size-6" type="text" inputmode="numeric" placeholder="Longitude" value="-81.23"/>
             <br/>
-            <button id="btn-current" class="is-size-3 has-background-info has-text-info-light mt-4" type="button">Get Weather</button>
+            <button id="btn-current" class="is-size-3 mt-4" type="button"><span class="has-text-info-light">Get Weather</span></button>
         </form>
     </nav>
 
     <!-- Current Weather Stats -->
-    <!-- **Ask Kenan about icon and description classes & tempF ID** -->
     <div id="current-weather">
         <div id="current-city">
         </div>
-        <div id="current-icon" class="icon">
+        <div id="current-icon">
         </div>
-        <div id="current-desc" class="description">
+        <div id="current-desc">
         </div>
         <div id="current-temp">
         </div>
@@ -52,69 +51,67 @@
         </div>
         <div id="current-speed">
         </div>
-        <div id="tempF"></div>
     </div>
 
     <!-- Card Section-->
-    <!-- **Ask about is-one-fifth class and container element** -->
-    <h3 id="forecast-header" class="has-text-weight-bold is-size-3 has-text-info-light m-5"></h3>
+    <h3 id="forecast-header" class="has-text-weight-bold is-size-3 m-5"></h3>
     <container id="cards">
 
         <!-- Card 1 -->
-        <div id="update-1">
+        <div id="update-1" class="forecast">
             <div id="date-day1">
             </div>
-            <div id="icon-day1" class="icon">
+            <div id="icon-day1">
             </div>
-            <div id="desc-day1" class="description">
+            <div id="desc-day1">
             </div>
             <div id="temp-day1">
             </div>    
         </div>
 
         <!-- Card 2 -->
-        <div id="update-2">
+        <div id="update-2" class="forecast">
             <div id="date-day2">
             </div>
-            <div id="icon-day2" class="icon">
+            <div id="icon-day2">
             </div>
-            <div id="desc-day2" class="description">
+            <div id="desc-day2">
             </div>
             <div id="temp-day2">
             </div>    
         </div>
 
         <!-- Card 3 -->
-        <div id="update-3">
+        <div id="update-3" class="forecast">
             <div id="date-day3">
             </div>
-            <div id="icon-day3" class="icon">
+            <div id="icon-day3">
             </div>
-            <div id="desc-day3" class="description">
+            <div id="desc-day3">
             </div>
             <div id="temp-day3">
             </div>    
         </div>  
 
         <!-- Card 4 -->
-        <div id="update-4">
+        <div id="update-4" class="forecast">
             <div id="date-day4">
             </div>
-            <div id="icon-day4" class="icon">
+            <div id="icon-day4">
             </div>
-            <div id="desc-day4" class="description">
+            <div id="desc-day4">
             </div>
             <div id="temp-day4">
             </div>    
         </div>   
         
         <!-- Card 5 -->
-        <div id="update-5">
+        <div id="update-5" class="forecast">
             <div id="date-day5">
             </div>
-            <div id="icon-day5" class="icon"> 
+            <div id="icon-day5"> 
             </div>
-            <div id="desc-day5" class="description">
+            <div id="desc-day5">
             </div>
             <div id="temp-day5">
             </div>    
@@ -122,11 +119,11 @@
     </container>
 
     <!-- Holiday-->
-    <h4 class="has-text-centered has-text-weight-bold is-size-3 has-text-info-light m-5">What's going on in the world?</h4>
+    <h4 class="has-text-centered has-text-weight-bold is-size-3 m-5">What's going on in the world?</h4>
     <div class="columns has-text-centered">
 
         <!-- Card 1 -->
-        <div id="holi1" class="card column m-5 p-2">
+        <div id="holi1" class="card column holi-card m-5 p-2">
             <p id="date-holi1"></p>
             <p id="local-holi1"></p>
             <p id="common-holi1"></p>
@@ -134,7 +131,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div id="holi2" class="card column m-5 p-2">
+        <div id="holi2" class="card column holi-card m-5 p-2">
             <p id="date-holi2"></p>
             <p id="local-holi2"></p>
             <p id="common-holi2"></p>
@@ -142,7 +139,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div id="holi3" class="card column m-5 p-2">
+        <div id="holi3" class="card column holi-card m-5 p-2">
             <p id="date-holi3"></p>
             <p id="local-holi3"></p>
             <p id="common-holi3"></p>
@@ -150,7 +147,7 @@
         </div>
 
         <!-- Card 4 -->
-        <div id="holi4" class="card column m-5 p-2">
+        <div id="holi4" class="card column holi-card m-5 p-2">
             <p id="date-holi4"></p>
             <p id="local-holi4"></p>
             <p id="common-holi4"></p>
@@ -158,7 +155,7 @@
         </div>
 
         <!-- Card 5 -->
-        <div id="holi5" class="card column m-5 p-2">
+        <div id="holi5" class="card column holi-card m-5 p-2">
             <p id="date-holi5"></p>
             <p id="local-holi5"></p>
             <p id="common-holi5"></p>
@@ -167,7 +164,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="has-text-centered p-3 has-background-info has-text-info-light">
+    <footer class="has-text-centered p-3 has-text-info-light">
         <p>Thank you for visiting On the Go</p>
         <p>Have a wonderful day!</p>
     </footer>

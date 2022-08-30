@@ -2,7 +2,7 @@
 
 ## Website
 
-https://calebfunderburk.github.io/Weather-Knower/
+https://calebfunderburk.github.io/On-The-Go/
 
 ## Built With
 
