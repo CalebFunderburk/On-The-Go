@@ -20,6 +20,7 @@ https://calebfunderburk.github.io/On-The-Go/
 In this project...
 
 ## Screenshot
+![Screenshot-1](/.assets/images/screenshot1.png)
 
 ## Contributions
 
