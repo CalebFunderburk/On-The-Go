@@ -51,7 +51,6 @@ const app = {
     },
 
     // Geolocation success
-    // What Caleb did here is questionable
     success: (position) => {
         let latData = document.getElementById("latitude").value = 
             position.coords.latitude.toFixed(2);
@@ -107,7 +106,6 @@ const app = {
         }
 
         // Variables for current weather area
-        // **Ask about var Kelvin**
         let currentCity = document.getElementById("current-city");
         let currentIcon = document.getElementById("current-icon");
         let currentDesc = document.getElementById("current-desc");
@@ -127,6 +125,7 @@ const app = {
         // "5-Day Forecast"
         let forecastHeader = document.getElementById("forecast-header");
         forecastHeader.innerHTML = "5-Day Forecast:";
+        forecastHeader.style.color = "rgb(238,137,104)"
      
         // Varibles for weather card 1
         let dateDay1 = document.getElementById("date-day1");
@@ -227,17 +226,23 @@ const app = {
         // Current weather container
         let currentContainer = document.getElementById("current-weather");
         currentContainer.className = "hero has-text-left m-5 p-2";
-        currentCity.className = "has-text-info-light has-text-weight-bold is-size-3";
+        currentCity.className = "has-text-weight-bold is-size-3";
         currentIcon.className = "image is-96x96";
-        currentDesc.className = "has-text-info-light is-size-4";
-        currentTemp.className = "has-text-info-light is-size-4";
-        currentHumid.className = "has-text-info-light is-size-4";
-        currentSpeed.className = "has-text-info-light is-size-4";
-        currentContainer.style.backgroundColor = "rgb(0,0,0)"
+        currentDesc.className = "is-size-4";
+        currentTemp.className = "is-size-4";
+        currentHumid.className = "is-size-4";
+        currentSpeed.className = "is-size-4";
+        currentContainer.style.backgroundColor = "rgb(48,47,78)";
+        currentCity.style.color = "rgb(238,137,104)";
+        currentDesc.style.color = "rgb(248,208,144)";
+        currentTemp.style.color = "rgb(248,208,144)";
+        currentHumid.style.color = "rgb(248,208,144)";
+        currentSpeed.style.color = "rgb(248,208,144)";
+        currentContainer.style.border = "solid 3px rgb(248,208,144)";
 
         // Cards container
         let cardContainer = document.getElementById("cards");
-        cardContainer.className = "columns is-one-fifth  m-5 p-2";
+        cardContainer.className = "columns is-one-fifth m-5 p-2";
 
         // Card 1
         let card1 = document.getElementById("update-1");
@@ -245,8 +250,12 @@ const app = {
         dateDay1.className = "is-size-4";
         iconDay1.className = "image is-64x64";
         descDay1.className = "is-size-4";
-        tempDay1.className = "is-size-4"; 
-        card1.style.backgroundImage = "linear-grandient(#185EE6, #29BFF0)"     
+        tempDay1.className = "is-size-4";
+        card1.style.backgroundColor = "rgb(48,47,78)";
+        dateDay1.style.color = "rgb(238,137,104)";
+        descDay1.style.color = "rgb(248,208,144)";
+        tempDay1.style.color = "rgb(248,208,144)";
+        card1.style.border = "solid 3px rgb(248,208,144)";
 
         // Card 2
         let card2 = document.getElementById("update-2");
@@ -255,6 +264,11 @@ const app = {
         iconDay2.className = "image is-64x64";
         descDay2.className = "is-size-4";
         tempDay2.className = "is-size-4";
+        card2.style.backgroundColor = "rgb(48,47,78)";
+        dateDay2.style.color = "rgb(238,137,104)";
+        descDay2.style.color= "rgb(248,208,144)";
+        tempDay2.style.color= "rgb(248,208,144)";
+        card2.style.border = "solid 3px rgb(248,208,144)";
 
         // Card 3
         let card3 = document.getElementById("update-3");
@@ -263,6 +277,11 @@ const app = {
         iconDay3.className = "image is-64x64";
         descDay3.className = "is-size-4";
         tempDay3.className = "is-size-4";
+        card3.style.backgroundColor = "rgb(48,47,78)";
+        dateDay3.style.color = "rgb(238,137,104)";
+        descDay3.style.color= "rgb(248,208,144)";
+        tempDay3.style.color= "rgb(248,208,144)";
+        card3.style.border = "solid 3px rgb(248,208,144)";
         
         // Card 4
         let card4 = document.getElementById("update-4");
@@ -271,6 +290,11 @@ const app = {
         iconDay4.className = "image is-64x64";
         descDay4.className = "is-size-4";
         tempDay4.className = "is-size-4";
+        card4.style.backgroundColor = "rgb(48,47,78)";
+        dateDay4.style.color = "rgb(238,137,104)";
+        descDay4.style.color= "rgb(248,208,144)";
+        tempDay4.style.color= "rgb(248,208,144)";
+        card4.style.border = "solid 3px rgb(248,208,144)";
         
         // Card 5
         let card5 = document.getElementById("update-5");
@@ -279,6 +303,11 @@ const app = {
         iconDay5.className = "image is-64x64";
         descDay5.className = "is-size-4";
         tempDay5.className = "is-size-4";
+        card5.style.backgroundColor = "rgb(48,47,78)";
+        dateDay5.style.color = "rgb(238,137,104)";
+        descDay5.style.color= "rgb(248,208,144)";
+        tempDay5.style.color= "rgb(248,208,144)";
+        card5.style.border = "solid 3px rgb(248,208,144)";
     }
 }
 
@@ -294,26 +323,41 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
         let dateHoli1 = document.getElementById("date-holi1");
         let localHoli1 = document.getElementById("local-holi1");
         let commonHoli1 = document.getElementById("common-holi1");
+        dateHoli1.style.color = "rgb(238,137,104)";
+        localHoli1.style.color = "rgb(248,208,144)";
+        commonHoli1.style.color = "rgb(248,208,144)";
 
         // Variables for card 2
         let dateHoli2 = document.getElementById("date-holi2");
         let localHoli2 = document.getElementById("local-holi2");
         let commonHoli2 = document.getElementById("common-holi2");
+        dateHoli2.style.color = "rgb(238,137,104)";
+        localHoli2.style.color = "rgb(248,208,144)";
+        commonHoli2.style.color = "rgb(248,208,144)";
 
         // Variables for card 3
         let dateHoli3 = document.getElementById("date-holi3");
         let localHoli3 = document.getElementById("local-holi3");
         let commonHoli3 = document.getElementById("common-holi3");
+        dateHoli3.style.color = "rgb(238,137,104)";
+        localHoli3.style.color = "rgb(248,208,144)";
+        commonHoli3.style.color = "rgb(248,208,144)";
         
         // Variables for card 4
         let dateHoli4 = document.getElementById("date-holi4");
         let localHoli4 = document.getElementById("local-holi4");
         let commonHoli4 = document.getElementById("common-holi4");
+        dateHoli4.style.color = "rgb(238,137,104)";
+        localHoli4.style.color = "rgb(248,208,144)";
+        commonHoli4.style.color = "rgb(248,208,144)";
         
         // Variables for card 5
         let dateHoli5 = document.getElementById("date-holi5");
         let localHoli5 = document.getElementById("local-holi5");
         let commonHoli5 = document.getElementById("common-holi5");
+        dateHoli5.style.color = "rgb(238,137,104)";
+        localHoli5.style.color = "rgb(248,208,144)";
+        commonHoli5.style.color = "rgb(248,208,144)";
         
         // Format first date
         dateDataHoli1 = data[0].date;
@@ -328,7 +372,8 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
         commonHoli1.innerHTML = data[0].name;
         dateHoli1.className = "is-size-6";
         localHoli1.className = "is-size-6";
-        commonHoli1.className = "is-size-6";        
+        commonHoli1.className = "is-size-6";  
+        
 
         // Format second date
         dateDataHoli2 = data[1].date;
@@ -411,6 +456,7 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
             // Display this data in card 1
             countryHoli1.innerHTML = data.commonName;
             countryHoli1.className = "is-size-6";
+            countryHoli1.style.color = "rgb(238,137,104)";
         })
 
         // Fetch data with countryCode2
@@ -427,6 +473,7 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
             // Display this data in card 2
             countryHoli2.innerHTML = data.commonName;
             countryHoli2.className = "is-size-6";
+            countryHoli2.style.color = "rgb(238,137,104)";
         })
 
         // Fetch data with countryCode3
@@ -443,6 +490,7 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
             // Display this data in card 3
             countryHoli3.innerHTML = data.commonName;
             countryHoli3.className = "is-size-6";
+            countryHoli3.style.color = "rgb(238,137,104)";
         })
 
         // Fetch data with countryCode4
@@ -459,6 +507,7 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
             // Display this data in card 4
             countryHoli4.innerHTML = data.commonName;
             countryHoli4.className = "is-size-6";
+            countryHoli4.style.color = "rgb(238,137,104)";
         })
         
         // Fetch data with countryCode5
@@ -475,6 +524,7 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
             // Display this data in card 5
             countryHoli5.innerHTML = data.commonName;
             countryHoli5.className = "is-size-6";
+            countryHoli5.style.color = "rgb(238,137,104)";
         })         
     })
     .catch((err) => {
