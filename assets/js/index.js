@@ -377,7 +377,7 @@ fetch("https://date.nager.at/api/v3/NextPublicHolidaysWorldwide")
 
         // Format second date
         dateDataHoli2 = data[1].date;
-        let holiDay2 = new Date(dateDataHoli2).getDate() + 1;
+        let holiDay2 = new Date(dateDataHoli2).getDate();
         let holiMonth2 = new Date(dateDataHoli2).getMonth() + 1;
         let holiYear2 = new Date(dateDataHoli2).getFullYear();
         let holiDateFormat2 = `${holiMonth2}/${holiDay2}/${holiYear2}`;
