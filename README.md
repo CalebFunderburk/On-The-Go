@@ -29,7 +29,7 @@ As a user about leave home, I would like an application that allows me to see th
 
 ## Deployed Application
 
-<a href="https://calebfunderburk.github.io/On-The-Go/" target="_blank">Click here</a> to view this project.
+<a href="https://calebfunderburk.github.io/On-The-Go/" target="_blank">Click here</a> to view this application.
 
 ## Installation
 
