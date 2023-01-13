@@ -1,4 +1,4 @@
-# Weather-On-The-Go
+# Weather On The Go
 
 ## About the App
 
