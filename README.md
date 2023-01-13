@@ -1,6 +1,6 @@
 # Weather On The Go
 
-## About the App
+## About this App
 
 ### Description
 
