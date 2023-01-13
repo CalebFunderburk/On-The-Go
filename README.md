@@ -1,10 +1,22 @@
 # Weather-On-The-Go
 
-## Website
+## About the App
 
-https://calebfunderburk.github.io/On-The-Go/
+### Description
 
-## Built With
+An application that displays the current weather along with a 5-day forecast for any specfied longitude and latitude. The application also displays the next 5 international Observances and Holidays.
+
+### User Story
+
+As a user about leave home, I would like an application that allows me to see the weather. When I am on the homepage, I am presented with a form to either enter a location or use my current location, along with an area that displays the next 5 international Observances and Holidays. After submitting the form, I am presented with the current weather along with a 5-day forcast for that location.
+
+### Features
+
+1. Users can use the form to either enter a certain set of longitude and latitude points, or use their current location to obtain a weather forcast.
+2. The application displays the city name, temperature, humidity, and wind speed for the location provided along with a picture and deciprtion for the weather.
+3. The application displays the date and country that the next 5 international Observances and Holidays are celebrated on/by, as well as both the native name and English name for the holiday.
+
+### Built With
 
 - HTML
 - CSS
@@ -15,11 +27,17 @@ https://calebfunderburk.github.io/On-The-Go/
 - Nager.Date API
 - MomentJS
 
-# Project Narrative
+## Deployed Application
 
-In this project, Team Butterfly Bandits decided to make an application that takes user input, stores it to local storage, and displays data on the page. We decided to make a weather app that usees a users current location to give them their current weather, and a 5-day forecast. We also decided to implement a feature that displays the next 5 upcoming Holidays around the world. Both of these features required us to get our hands dirty with API's. We were able to get all of the information we needed out of the Open Weather Map API, but the Nager.Date API we used for the Holiday's was limited on what information we could get out of it. This lead us to chain mulitple fetch requests to each other in order to obtain the data we were looking for. This project is currently in an MVP state and we have tons of ideas for the future of this application.
+https://calebfunderburk.github.io/On-The-Go/
 
-## Screenshot
+## Installation
+
+This program can be run through a browser using the above link to the deployed application. In order to run this program locally you will need to:
+
+* Clone this repository to receive all the files.
+
+## Screenshots
 ![Screenshot-1](./assets/images/screenshot1.png)
 ![Screenshot-2](./assets/images/screenshot2.png)
 ![Screenshot-3](./assets/images/screenshot3.png)
