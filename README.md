@@ -12,9 +12,9 @@ As a user about leave home, I would like an application that allows me to see th
 
 ### Features
 
-1. Users can use the form to either enter a certain set of longitude and latitude points, or use their current location to obtain a weather forcast.
-2. The application displays the city name, temperature, humidity, and wind speed for the location provided along with a picture and deciprtion for the weather.
-3. The application displays the date and country that the next 5 international Observances and Holidays are celebrated on/by, as well as both the native name and English name for the holiday.
+* Users can use the form to either enter a certain set of longitude and latitude points, or use their current location to obtain a weather forcast.
+* The application displays the city name, temperature, humidity, and wind speed for the location provided along with a picture and deciprtion for the weather.
+* The application displays the date and country that the next 5 international Observances and Holidays are celebrated on/by, as well as both the native name and English name for the holiday.
 
 ### Built With
 
