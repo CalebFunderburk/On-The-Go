@@ -23,7 +23,7 @@ As a user about leave home, I would like an application that allows me to see th
 - Bulma
 - JavaScript
 - JQuery
-- Open Weather Api
+- Open Weather API
 - Nager.Date API
 - MomentJS
 
